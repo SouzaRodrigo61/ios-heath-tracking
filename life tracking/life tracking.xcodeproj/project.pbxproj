@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B3DA15424A829590010A54D /* BlurRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA15324A829590010A54D /* BlurRepresentable.swift */; };
+		5B3DA15724A830500010A54D /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 5B3DA15624A830500010A54D /* SwiftUICharts */; };
+		5B3DA15924A833FE0010A54D /* MapRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA15824A833FE0010A54D /* MapRepresentable.swift */; };
 		5B968F5E24A053620020AB5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B968F5D24A053620020AB5D /* AppDelegate.swift */; };
 		5B968F6024A053620020AB5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B968F5F24A053620020AB5D /* SceneDelegate.swift */; };
 		5B968F6224A053620020AB5D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B968F6124A053620020AB5D /* ContentView.swift */; };
@@ -16,6 +19,11 @@
 		5B968F7524A053680020AB5D /* life_trackingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B968F7424A053680020AB5D /* life_trackingTests.swift */; };
 		5B968F8024A053690020AB5D /* life_trackingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B968F7F24A053690020AB5D /* life_trackingUITests.swift */; };
 		5B968F9624A0E1A70020AB5D /* ButtonCustomize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B968F9524A0E1A70020AB5D /* ButtonCustomize.swift */; };
+		5B968F9C24A0E8CC0020AB5D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B968F9B24A0E8CC0020AB5D /* OnboardingView.swift */; };
+		5BB6D95924A826E0009F2744 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB6D95824A826E0009F2744 /* CardComponent.swift */; };
+		5BE4FE0A24A0F89B001EB4D3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4FE0924A0F89B001EB4D3 /* HomeView.swift */; };
+		5BE4FE0C24A14DAB001EB4D3 /* SearchComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4FE0B24A14DAB001EB4D3 /* SearchComponent.swift */; };
+		5BE4FE0E24A14DE6001EB4D3 /* AvatarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4FE0D24A14DE6001EB4D3 /* AvatarComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B3DA15324A829590010A54D /* BlurRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurRepresentable.swift; sourceTree = "<group>"; };
+		5B3DA15824A833FE0010A54D /* MapRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRepresentable.swift; sourceTree = "<group>"; };
 		5B968F5A24A053620020AB5D /* life tracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "life tracking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B968F5D24A053620020AB5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B968F5F24A053620020AB5D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +61,11 @@
 		5B968F7F24A053690020AB5D /* life_trackingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = life_trackingUITests.swift; sourceTree = "<group>"; };
 		5B968F8124A053690020AB5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B968F9524A0E1A70020AB5D /* ButtonCustomize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustomize.swift; sourceTree = "<group>"; };
+		5B968F9B24A0E8CC0020AB5D /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		5BB6D95824A826E0009F2744 /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
+		5BE4FE0924A0F89B001EB4D3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		5BE4FE0B24A14DAB001EB4D3 /* SearchComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchComponent.swift; sourceTree = "<group>"; };
+		5BE4FE0D24A14DE6001EB4D3 /* AvatarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B3DA15724A830500010A54D /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +94,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B05BDBE24A8D79800A8B004 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				5B05BDBF24A8D95100A8B004 /* Bar */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		5B05BDBF24A8D95100A8B004 /* Bar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Bar;
+			sourceTree = "<group>";
+		};
+		5B05BDC024A8D98000A8B004 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5B3DA15224A829390010A54D /* Representables */ = {
+			isa = PBXGroup;
+			children = (
+				5B3DA15324A829590010A54D /* BlurRepresentable.swift */,
+				5B3DA15824A833FE0010A54D /* MapRepresentable.swift */,
+			);
+			path = Representables;
+			sourceTree = "<group>";
+		};
 		5B968F5124A053620020AB5D = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +148,7 @@
 		5B968F5C24A053620020AB5D /* life tracking */ = {
 			isa = PBXGroup;
 			children = (
+				5B05BDC024A8D98000A8B004 /* Helpers */,
 				5B968F9424A0E10E0020AB5D /* Mockups */,
 				5B968F9324A0E0FE0020AB5D /* Models */,
 				5B968F9124A0E0B40020AB5D /* Utils */,
@@ -148,6 +196,8 @@
 		5B968F8D24A0E0530020AB5D /* Layout */ = {
 			isa = PBXGroup;
 			children = (
+				5B05BDBE24A8D79800A8B004 /* Charts */,
+				5B3DA15224A829390010A54D /* Representables */,
 				5B968F9224A0E0D20020AB5D /* Components */,
 			);
 			path = Layout;
@@ -156,6 +206,8 @@
 		5B968F8E24A0E0900020AB5D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5BE4FE0824A0F884001EB4D3 /* Home */,
+				5B968F9A24A0E8BA0020AB5D /* Onboarding */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +237,9 @@
 			isa = PBXGroup;
 			children = (
 				5B968F9524A0E1A70020AB5D /* ButtonCustomize.swift */,
+				5BE4FE0B24A14DAB001EB4D3 /* SearchComponent.swift */,
+				5BE4FE0D24A14DE6001EB4D3 /* AvatarComponent.swift */,
+				5BB6D95824A826E0009F2744 /* CardComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -203,6 +258,22 @@
 			path = Mockups;
 			sourceTree = "<group>";
 		};
+		5B968F9A24A0E8BA0020AB5D /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				5B968F9B24A0E8CC0020AB5D /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		5BE4FE0824A0F884001EB4D3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5BE4FE0924A0F89B001EB4D3 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -219,6 +290,9 @@
 			dependencies = (
 			);
 			name = "life tracking";
+			packageProductDependencies = (
+				5B3DA15624A830500010A54D /* SwiftUICharts */,
+			);
 			productName = "life tracking";
 			productReference = 5B968F5A24A053620020AB5D /* life tracking.app */;
 			productType = "com.apple.product-type.application";
@@ -291,6 +365,9 @@
 				Base,
 			);
 			mainGroup = 5B968F5124A053620020AB5D;
+			packageReferences = (
+				5B3DA15524A830500010A54D /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 5B968F5B24A053620020AB5D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -336,8 +413,15 @@
 			files = (
 				5B968F5E24A053620020AB5D /* AppDelegate.swift in Sources */,
 				5B968F6024A053620020AB5D /* SceneDelegate.swift in Sources */,
+				5BE4FE0E24A14DE6001EB4D3 /* AvatarComponent.swift in Sources */,
+				5B3DA15924A833FE0010A54D /* MapRepresentable.swift in Sources */,
 				5B968F6224A053620020AB5D /* ContentView.swift in Sources */,
+				5BE4FE0A24A0F89B001EB4D3 /* HomeView.swift in Sources */,
+				5B3DA15424A829590010A54D /* BlurRepresentable.swift in Sources */,
+				5B968F9C24A0E8CC0020AB5D /* OnboardingView.swift in Sources */,
+				5BB6D95924A826E0009F2744 /* CardComponent.swift in Sources */,
 				5B968F9624A0E1A70020AB5D /* ButtonCustomize.swift in Sources */,
+				5BE4FE0C24A14DAB001EB4D3 /* SearchComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +746,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5B3DA15524A830500010A54D /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5B3DA15624A830500010A54D /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B3DA15524A830500010A54D /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5B968F5224A053620020AB5D /* Project object */;
 }

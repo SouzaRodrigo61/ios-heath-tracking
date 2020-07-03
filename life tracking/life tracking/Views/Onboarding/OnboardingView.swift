@@ -8,13 +8,13 @@
 
 import SwiftUI
 
+// MARK: - Onboarding View
 struct OnboardingView: View {
     @State var SlideGesture = CGSize.zero
     @State var SlideOne = false
     @State var SlideOnePrevious = false
     @State var SlideTwo = false
     @State var SlideTwoPrevious = false
-    
     
     var body: some View {
         GeometryReader { bounds in
@@ -104,6 +104,11 @@ struct OnboardingView: View {
                 
                 if bounds.size.height > 800 {
                     BottomView(SlideOne: self.$SlideOne, SlideOnePrevious: self.$SlideOnePrevious, SlideTwo: self.$SlideTwo, SlideTwoPrevious: self.$SlideTwoPrevious)
+                } else {
+                    BottomHeaderSimple(SlideOne: self.$SlideOne, SlideOnePrevious: self.$SlideOnePrevious, SlideTwo: self.$SlideTwo, SlideTwoPrevious: self.$SlideTwoPrevious, bounds: bounds, color: Color("OnboardingPage"))
+                    .offset(y: bounds.size.height - 50)
+                    Bottom(SlideOne: self.$SlideOne, SlideOnePrevious: self.$SlideOnePrevious, SlideTwo: self.$SlideTwo, SlideTwoPrevious: self.$SlideTwoPrevious, bounds: bounds, color: Color("OnboardingPage"))
+                        .offset(y: bounds.size.height - 130)
                 }
                 
             }
@@ -112,6 +117,7 @@ struct OnboardingView: View {
     }
 }
 
+// MARK: - Onboarding View Previews
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -120,7 +126,8 @@ struct OnboardingView_Previews: PreviewProvider {
     }
 }
 
-struct BottomView: View {
+// MARK: - Bottom View
+private struct BottomView: View {
     
     @Binding var SlideOne: Bool
     @Binding var SlideOnePrevious: Bool
@@ -134,9 +141,9 @@ struct BottomView: View {
                 ZStack {
                     
                     BottomHeader(SlideOne: self.$SlideOne, SlideOnePrevious: self.$SlideOnePrevious, SlideTwo: self.$SlideTwo, SlideTwoPrevious: self.$SlideTwoPrevious,
-                                 bounds: bounds)
+                                 bounds: bounds, color: Color.white)
                     
-                    Bottom(SlideOne: self.$SlideOne, SlideOnePrevious: self.$SlideOnePrevious, SlideTwo: self.$SlideTwo, SlideTwoPrevious: self.$SlideTwoPrevious, bounds: bounds)
+                    Bottom(SlideOne: self.$SlideOne, SlideOnePrevious: self.$SlideOnePrevious, SlideTwo: self.$SlideTwo, SlideTwoPrevious: self.$SlideTwoPrevious, bounds: bounds, color: Color.white)
                     
                 }
                 .frame(width: bounds.size.width, height: bounds.size.height / 3)
@@ -146,13 +153,15 @@ struct BottomView: View {
     }
 }
 
-struct PageView: View {
+// MARK: - Page View
+private struct PageView: View {
     
     @Binding var SlideOne: Bool
     @Binding var SlideOnePrevious: Bool
     @Binding var SlideTwo: Bool
     @Binding var SlideTwoPrevious: Bool
     
+    var color: Color
     
     let maxWidthDisable: CGFloat = 20
     let maxWidthEnable: CGFloat = 35
@@ -162,7 +171,7 @@ struct PageView: View {
             if self.SlideOne == false || self.SlideOnePrevious == true {
                 HStack {
                     Rectangle()
-                        .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                        .foregroundColor(color)
                         .frame(maxWidth: maxWidthEnable, maxHeight: 10)
                         .cornerRadius(10)
                     Rectangle()
@@ -181,7 +190,7 @@ struct PageView: View {
                         .frame(maxWidth: maxWidthDisable, maxHeight: 10)
                         .cornerRadius(10)
                     Rectangle()
-                        .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                        .foregroundColor(color)
                         .frame(maxWidth: maxWidthEnable, maxHeight: 10)
                         .cornerRadius(10)
                     Rectangle()
@@ -200,7 +209,7 @@ struct PageView: View {
                         .frame(maxWidth: maxWidthDisable, maxHeight: 10)
                         .cornerRadius(10)
                     Rectangle()
-                        .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                        .foregroundColor(color)
                         .frame(maxWidth: maxWidthEnable, maxHeight: 10)
                         .cornerRadius(10)
                 }
@@ -209,7 +218,8 @@ struct PageView: View {
     }
 }
 
-struct Bottom: View {
+// MARK: - Bottom
+private struct Bottom: View {
         
     @Binding var SlideOne: Bool
     @Binding var SlideOnePrevious: Bool
@@ -218,10 +228,12 @@ struct Bottom: View {
     
     var bounds: GeometryProxy
     
+    var color: Color
+    
     var body: some View {
         VStack {
             HStack {
-                PageView(SlideOne: self.$SlideOne, SlideOnePrevious: self.$SlideOnePrevious, SlideTwo: self.$SlideTwo, SlideTwoPrevious: self.$SlideTwoPrevious)
+                PageView(SlideOne: self.$SlideOne, SlideOnePrevious: self.$SlideOnePrevious, SlideTwo: self.$SlideTwo, SlideTwoPrevious: self.$SlideTwoPrevious, color: self.color)
                     .animation(.default)
                 
                 Spacer()
@@ -263,7 +275,8 @@ struct Bottom: View {
     }
 }
 
-struct BottomHeader: View {
+// MARK: - Bottom Header
+private struct BottomHeader: View {
     
     @Binding var SlideOne: Bool
     @Binding var SlideOnePrevious: Bool
@@ -271,60 +284,123 @@ struct BottomHeader: View {
     @Binding var SlideTwoPrevious: Bool
     
     var bounds: GeometryProxy
+    var color: Color
     
     var body: some View {
         VStack(alignment: .leading) {
             if self.SlideOne == false || self.SlideOnePrevious == true {
-                VStack(alignment: .leading) {
+                VStack {
                     Text("Utilização de mascaras")
                         .font(.title)
                         .bold()
-                        .foregroundColor(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
-                        .frame(maxWidth: bounds.size.width - 30)
+                        .foregroundColor(color)
                         .animation(.spring())
                     
                     Text("As recomendações do Ministério da Saúde em relação ao uso de máscaras cirúrgicas.")
-                        .font(.subheadline)
-                        .foregroundColor(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
-                        .frame(maxWidth: bounds.size.width - 30)
-                        .offset(y: 20)
+                    .font(.subheadline)
+                    .foregroundColor(color)
+                    .offset(y: 20)
                 }
+                .padding(.horizontal, 20)
+                .frame(height: 80)
+                .offset(y: -80)
+                
             } else if self.SlideTwo == false {
-                VStack(alignment: .leading) {
+                VStack {
                     Text("Distanciamente social")
                         .font(.title)
                         .bold()
-                        .foregroundColor(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
-                        .frame(maxWidth: bounds.size.width - 30)
+                        .foregroundColor(color)
                         .animation(.spring())
                     
                     Text("O distanciamento social é um conjunto de ações que buscam limitar o convivio social de modo a parar ou controlar a propagação de doenças contagiosas.")
-                        .font(.subheadline)
-                        .foregroundColor(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
-                        .frame(maxWidth: bounds.size.width - 30)
-                        .offset(y: 20)
+                    .font(.subheadline)
+                    .foregroundColor(color)
+                    .offset(y: 20)
                 }
+                .padding(.horizontal, 20)
+                .frame(height: 100)
+                .offset(y: -70)
                 
             } else if self.SlideTwo == true {
-                VStack(alignment: .leading) {
+                VStack {
                     Text("Higienização das mãos")
                         .font(.title)
                         .bold()
-                        .foregroundColor(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
-                        .frame(maxWidth: bounds.size.width - 30)
+                        .foregroundColor(color)
                         .animation(.spring())
                     
                     Text("A lavagem de mãos é uma atitude fácil e uma forma efetiva de previnir a disseminação de doenças.")
-                        .font(.subheadline)
-                        .foregroundColor(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
-                        .frame(maxWidth: bounds.size.width - 30)
-                        .offset(y: 20)
+                    .font(.subheadline)
+                    .foregroundColor(color)
+                    .offset(y: 20)
                 }
+                .padding(.horizontal, 20)
+                .frame(height: 80)
+                .offset(y: -80)
                 
             }
         }
-        .frame(width: bounds.size.width, height: 300)
-        .offset(y: -80)
-        .animation(.easeInOut(duration: 0.06))
+        .animation(.spring())
     }
 }
+
+
+// MARK: - Bottom Header Simple
+private struct BottomHeaderSimple: View {
+    
+    @Binding var SlideOne: Bool
+    @Binding var SlideOnePrevious: Bool
+    @Binding var SlideTwo: Bool
+    @Binding var SlideTwoPrevious: Bool
+    
+    var bounds: GeometryProxy
+    var color: Color
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            if self.SlideOne == false || self.SlideOnePrevious == true {
+                VStack {
+                    Text("Utilização de mascaras")
+                        .font(.title)
+                        .bold()
+                        .foregroundColor(color)
+                        .animation(.spring())
+                }
+                .padding(.horizontal, 20)
+                .frame(height: 80)
+                .offset(y: -80)
+                
+            } else if self.SlideTwo == false {
+                VStack {
+                    Text("Distanciamente social")
+                        .font(.title)
+                        .bold()
+                        .foregroundColor(color)
+                        .animation(.spring())
+                }
+                .padding(.horizontal, 20)
+                .frame(height: 80)
+                .offset(y: -80)
+                
+            } else if self.SlideTwo == true {
+                VStack {
+                    Text("Higienização das mãos")
+                        .font(.title)
+                        .bold()
+                        .foregroundColor(color)
+                        .animation(.spring())
+                }
+                .padding(.horizontal, 20)
+                .frame(height: 80)
+                .offset(y: -80)
+                
+            }
+        }
+        .animation(.spring())
+    }
+}
+
+
+
+

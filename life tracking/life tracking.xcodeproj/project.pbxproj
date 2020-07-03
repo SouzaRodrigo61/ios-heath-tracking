@@ -10,6 +10,10 @@
 		5B3DA15424A829590010A54D /* BlurRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA15324A829590010A54D /* BlurRepresentable.swift */; };
 		5B3DA15724A830500010A54D /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 5B3DA15624A830500010A54D /* SwiftUICharts */; };
 		5B3DA15924A833FE0010A54D /* MapRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA15824A833FE0010A54D /* MapRepresentable.swift */; };
+		5B65F68C24AE34F00049BA64 /* OnboardingOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B65F68B24AE34F00049BA64 /* OnboardingOne.swift */; };
+		5B65F68E24AEA4DA0049BA64 /* OnboardingTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B65F68D24AEA4DA0049BA64 /* OnboardingTwo.swift */; };
+		5B65F69024AEA62B0049BA64 /* OnboardingThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B65F68F24AEA62B0049BA64 /* OnboardingThree.swift */; };
+		5B65F69224AEC4040049BA64 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B65F69124AEC4040049BA64 /* RoundedCorners.swift */; };
 		5B968F5E24A053620020AB5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B968F5D24A053620020AB5D /* AppDelegate.swift */; };
 		5B968F6024A053620020AB5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B968F5F24A053620020AB5D /* SceneDelegate.swift */; };
 		5B968F6224A053620020AB5D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B968F6124A053620020AB5D /* ContentView.swift */; };
@@ -46,6 +50,10 @@
 /* Begin PBXFileReference section */
 		5B3DA15324A829590010A54D /* BlurRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurRepresentable.swift; sourceTree = "<group>"; };
 		5B3DA15824A833FE0010A54D /* MapRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRepresentable.swift; sourceTree = "<group>"; };
+		5B65F68B24AE34F00049BA64 /* OnboardingOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingOne.swift; sourceTree = "<group>"; };
+		5B65F68D24AEA4DA0049BA64 /* OnboardingTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTwo.swift; sourceTree = "<group>"; };
+		5B65F68F24AEA62B0049BA64 /* OnboardingThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingThree.swift; sourceTree = "<group>"; };
+		5B65F69124AEC4040049BA64 /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
 		5B968F5A24A053620020AB5D /* life tracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "life tracking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B968F5D24A053620020AB5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B968F5F24A053620020AB5D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -240,6 +248,7 @@
 				5BE4FE0B24A14DAB001EB4D3 /* SearchComponent.swift */,
 				5BE4FE0D24A14DE6001EB4D3 /* AvatarComponent.swift */,
 				5BB6D95824A826E0009F2744 /* CardComponent.swift */,
+				5B65F69124AEC4040049BA64 /* RoundedCorners.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -262,6 +271,9 @@
 			isa = PBXGroup;
 			children = (
 				5B968F9B24A0E8CC0020AB5D /* OnboardingView.swift */,
+				5B65F68B24AE34F00049BA64 /* OnboardingOne.swift */,
+				5B65F68D24AEA4DA0049BA64 /* OnboardingTwo.swift */,
+				5B65F68F24AEA62B0049BA64 /* OnboardingThree.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -416,12 +428,16 @@
 				5BE4FE0E24A14DE6001EB4D3 /* AvatarComponent.swift in Sources */,
 				5B3DA15924A833FE0010A54D /* MapRepresentable.swift in Sources */,
 				5B968F6224A053620020AB5D /* ContentView.swift in Sources */,
+				5B65F69024AEA62B0049BA64 /* OnboardingThree.swift in Sources */,
 				5BE4FE0A24A0F89B001EB4D3 /* HomeView.swift in Sources */,
 				5B3DA15424A829590010A54D /* BlurRepresentable.swift in Sources */,
+				5B65F68C24AE34F00049BA64 /* OnboardingOne.swift in Sources */,
 				5B968F9C24A0E8CC0020AB5D /* OnboardingView.swift in Sources */,
+				5B65F69224AEC4040049BA64 /* RoundedCorners.swift in Sources */,
 				5BB6D95924A826E0009F2744 /* CardComponent.swift in Sources */,
 				5B968F9624A0E1A70020AB5D /* ButtonCustomize.swift in Sources */,
 				5BE4FE0C24A14DAB001EB4D3 /* SearchComponent.swift in Sources */,
+				5B65F68E24AEA4DA0049BA64 /* OnboardingTwo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,25 +9,105 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    @State var SlideGesture = CGSize.zero
+    @State var SlideOne = false
+    @State var SlideOnePrevious = false
+    @State var SlideTwo = false
+    @State var SlideTwoPrevious = false
+    
+    
     var body: some View {
-        ZStack {
-            Color("background")
-                .edgesIgnoringSafeArea(.all)
-                
-            GeometryReader { bounds in
-                VStack {
-                    Text("Estou no banheiro")
-                        .font(.title)
+        GeometryReader { bounds in
+            ZStack(alignment: .top) {
+                Text("Prevenção contra")
+                    .font(.title)
+                    .offset(y: 40)
+                Text("o COVID-19")
+                    .font(.title)
+                    .offset(y: 80)
+                    .background(
+                        Rectangle()
+                            .frame(maxHeight: 20)
+                            .foregroundColor(Color(#colorLiteral(red: 0.7817796469, green: 0.7962377071, blue: 0.8177312613, alpha: 1)).opacity(0.5))
+                            .offset(x: 20, y: 90)
+                    )
 
+                OnboardingThree()
+                    .offset(y: bounds.size.height > 800 ? -100 : 0)
+                    .offset(x: self.SlideGesture.width)
+                    .offset(x: self.SlideTwo ? 0 : 500)
+                    .animation(.spring())
+                
+                    .gesture(
+                        DragGesture().onChanged { value in
+                            self.SlideGesture = value.translation
+                        }
+                        .onEnded { value in
+                            if self.SlideGesture.width > 150 {
+                                self.SlideTwo = false
+                                self.SlideTwoPrevious = true
+                            }
+                            self.SlideGesture = .zero
+                        }
+                )
+                
+                
+                
+                OnboardingTwo()
+                    .offset(y: bounds.size.height > 800 ? -100 : 0)
+                    .offset(x: self.SlideGesture.width)
+                    .offset(x: self.SlideOne ? 0 : 500)
+                    .offset(x: self.SlideOnePrevious ? 500 : 0)
+                    .offset(x: self.SlideTwo ? -500 : 0)
+                    .animation(.spring())
                     
-                    Spacer()
+                    .gesture(
+                        DragGesture().onChanged { value in
+                            self.SlideGesture = value.translation
+                        }
+                        .onEnded { value in
+                            if self.SlideGesture.width < -150 {
+                                self.SlideOne = true
+                                self.SlideTwo = true
+                               
+                            }
+                            
+                            if self.SlideGesture.width > 150 {
+                                self.SlideOnePrevious = true
+                                self.SlideOne = false
+                                
+                            }
+                            self.SlideGesture = .zero
+                        }
+                )
+                
                     
-                    Text("Pinhetao cruzado")
-                        .font(.title)
+                OnboardingOne()
+                    .offset(y: bounds.size.height > 800 ? -100 : 0)
+                    .offset(x: self.SlideGesture.width)
+                    .offset(x: self.SlideOne ? -500 : 0)
                     
+                    .animation(.spring())
+                    
+                    .gesture(
+                        DragGesture().onChanged { value in
+                            self.SlideGesture = value.translation
+                        }
+                        .onEnded { value in
+                            if self.SlideGesture.width < -150 {
+                                self.SlideOne = true
+                                self.SlideOnePrevious = false
+                            }
+                            self.SlideGesture = .zero
+                        }
+                )
+                
+                if bounds.size.height > 800 {
+                    BottomView(SlideOne: self.$SlideOne, SlideOnePrevious: self.$SlideOnePrevious, SlideTwo: self.$SlideTwo, SlideTwoPrevious: self.$SlideTwoPrevious)
                 }
                 
             }
+            .edgesIgnoringSafeArea(.all)
         }
     }
 }
@@ -36,10 +116,215 @@ struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             OnboardingView()
-                .environment(\.colorScheme, .light)
-
-            OnboardingView()
-                .environment(\.colorScheme, .dark)
         }
+    }
+}
+
+struct BottomView: View {
+    
+    @Binding var SlideOne: Bool
+    @Binding var SlideOnePrevious: Bool
+    @Binding var SlideTwo: Bool
+    @Binding var SlideTwoPrevious: Bool
+    
+    var body: some View {
+        GeometryReader { bounds in
+            VStack {
+                Spacer()
+                ZStack {
+                    
+                    BottomHeader(SlideOne: self.$SlideOne, SlideOnePrevious: self.$SlideOnePrevious, SlideTwo: self.$SlideTwo, SlideTwoPrevious: self.$SlideTwoPrevious,
+                                 bounds: bounds)
+                    
+                    Bottom(SlideOne: self.$SlideOne, SlideOnePrevious: self.$SlideOnePrevious, SlideTwo: self.$SlideTwo, SlideTwoPrevious: self.$SlideTwoPrevious, bounds: bounds)
+                    
+                }
+                .frame(width: bounds.size.width, height: bounds.size.height / 3)
+                .background(RoundedCorners(color: Color(#colorLiteral(red: 0.1545439363, green: 0.1904585063, blue: 0.3149669468, alpha: 1)), tl: 20, tr: 20, bl: 0, br: 0))
+            }
+        }
+    }
+}
+
+struct PageView: View {
+    
+    @Binding var SlideOne: Bool
+    @Binding var SlideOnePrevious: Bool
+    @Binding var SlideTwo: Bool
+    @Binding var SlideTwoPrevious: Bool
+    
+    
+    let maxWidthDisable: CGFloat = 20
+    let maxWidthEnable: CGFloat = 35
+    
+    var body: some View {
+        VStack {
+            if self.SlideOne == false || self.SlideOnePrevious == true {
+                HStack {
+                    Rectangle()
+                        .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                        .frame(maxWidth: maxWidthEnable, maxHeight: 10)
+                        .cornerRadius(10)
+                    Rectangle()
+                        .foregroundColor(Color(#colorLiteral(red: 0.6234664321, green: 0.6235737205, blue: 0.6234522462, alpha: 1)))
+                        .frame(maxWidth: maxWidthDisable, maxHeight: 10)
+                        .cornerRadius(10)
+                    Rectangle()
+                        .foregroundColor(Color(#colorLiteral(red: 0.6234664321, green: 0.6235737205, blue: 0.6234522462, alpha: 1)))
+                        .frame(maxWidth: maxWidthDisable, maxHeight: 10)
+                        .cornerRadius(10)
+                }
+            } else if self.SlideTwo == false {
+                HStack {
+                    Rectangle()
+                        .foregroundColor(Color(#colorLiteral(red: 0.6234664321, green: 0.6235737205, blue: 0.6234522462, alpha: 1)))
+                        .frame(maxWidth: maxWidthDisable, maxHeight: 10)
+                        .cornerRadius(10)
+                    Rectangle()
+                        .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                        .frame(maxWidth: maxWidthEnable, maxHeight: 10)
+                        .cornerRadius(10)
+                    Rectangle()
+                        .foregroundColor(Color(#colorLiteral(red: 0.6234664321, green: 0.6235737205, blue: 0.6234522462, alpha: 1)))
+                        .frame(maxWidth: maxWidthDisable, maxHeight: 10)
+                        .cornerRadius(10)
+                }
+            } else if self.SlideTwo == true {
+                HStack {
+                    Rectangle()
+                        .foregroundColor(Color(#colorLiteral(red: 0.6234664321, green: 0.6235737205, blue: 0.6234522462, alpha: 1)))
+                        .frame(maxWidth: maxWidthDisable, maxHeight: 10)
+                        .cornerRadius(10)
+                    Rectangle()
+                        .foregroundColor(Color(#colorLiteral(red: 0.6234664321, green: 0.6235737205, blue: 0.6234522462, alpha: 1)))
+                        .frame(maxWidth: maxWidthDisable, maxHeight: 10)
+                        .cornerRadius(10)
+                    Rectangle()
+                        .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
+                        .frame(maxWidth: maxWidthEnable, maxHeight: 10)
+                        .cornerRadius(10)
+                }
+            }
+        }
+    }
+}
+
+struct Bottom: View {
+        
+    @Binding var SlideOne: Bool
+    @Binding var SlideOnePrevious: Bool
+    @Binding var SlideTwo: Bool
+    @Binding var SlideTwoPrevious: Bool
+    
+    var bounds: GeometryProxy
+    
+    var body: some View {
+        VStack {
+            HStack {
+                PageView(SlideOne: self.$SlideOne, SlideOnePrevious: self.$SlideOnePrevious, SlideTwo: self.$SlideTwo, SlideTwoPrevious: self.$SlideTwoPrevious)
+                    .animation(.default)
+                
+                Spacer()
+                
+                
+                if self.SlideTwo == false {
+                    Text("Pular")
+                        .font(.headline)
+                        .foregroundColor(Color.white)
+                        .onTapGesture {
+                            if self.SlideOne == false {
+                                self.SlideOne = true
+                                self.SlideOnePrevious = false
+                            } else {
+                                self.SlideOne = true
+                                self.SlideTwo = true
+                            }
+                    }
+                    .frame(width: 100, height: 40)
+                    .background(Color(#colorLiteral(red: 0.8160262704, green: 0.2080340981, blue: 0.3583145738, alpha: 1)))
+                    .cornerRadius(10)
+                    .animation(.default)
+                } else {
+                    Text("Começar")
+                        .font(.headline)
+                        .bold()
+                        .foregroundColor(Color.white)
+                        .frame(width: 100, height: 40)
+                        .background(Color(#colorLiteral(red: 0.8160262704, green: 0.2080340981, blue: 0.3583145738, alpha: 1)))
+                        .cornerRadius(10)
+                        .animation(.default)
+                }
+                
+            }
+        }
+        .padding(.horizontal, 20)
+        .frame(width: bounds.size.width, height: 40)
+        .offset(y: 80)
+    }
+}
+
+struct BottomHeader: View {
+    
+    @Binding var SlideOne: Bool
+    @Binding var SlideOnePrevious: Bool
+    @Binding var SlideTwo: Bool
+    @Binding var SlideTwoPrevious: Bool
+    
+    var bounds: GeometryProxy
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            if self.SlideOne == false || self.SlideOnePrevious == true {
+                VStack(alignment: .leading) {
+                    Text("Utilização de mascaras")
+                        .font(.title)
+                        .bold()
+                        .foregroundColor(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
+                        .frame(maxWidth: bounds.size.width - 30)
+                        .animation(.spring())
+                    
+                    Text("As recomendações do Ministério da Saúde em relação ao uso de máscaras cirúrgicas.")
+                        .font(.subheadline)
+                        .foregroundColor(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
+                        .frame(maxWidth: bounds.size.width - 30)
+                        .offset(y: 20)
+                }
+            } else if self.SlideTwo == false {
+                VStack(alignment: .leading) {
+                    Text("Distanciamente social")
+                        .font(.title)
+                        .bold()
+                        .foregroundColor(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
+                        .frame(maxWidth: bounds.size.width - 30)
+                        .animation(.spring())
+                    
+                    Text("O distanciamento social é um conjunto de ações que buscam limitar o convivio social de modo a parar ou controlar a propagação de doenças contagiosas.")
+                        .font(.subheadline)
+                        .foregroundColor(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
+                        .frame(maxWidth: bounds.size.width - 30)
+                        .offset(y: 20)
+                }
+                
+            } else if self.SlideTwo == true {
+                VStack(alignment: .leading) {
+                    Text("Higienização das mãos")
+                        .font(.title)
+                        .bold()
+                        .foregroundColor(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
+                        .frame(maxWidth: bounds.size.width - 30)
+                        .animation(.spring())
+                    
+                    Text("A lavagem de mãos é uma atitude fácil e uma forma efetiva de previnir a disseminação de doenças.")
+                        .font(.subheadline)
+                        .foregroundColor(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
+                        .frame(maxWidth: bounds.size.width - 30)
+                        .offset(y: 20)
+                }
+                
+            }
+        }
+        .frame(width: bounds.size.width, height: 300)
+        .offset(y: -80)
+        .animation(.easeInOut(duration: 0.06))
     }
 }

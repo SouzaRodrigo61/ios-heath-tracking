@@ -234,10 +234,10 @@ private struct Bottom: View {
         VStack {
             HStack {
                 PageView(SlideOne: self.$SlideOne, SlideOnePrevious: self.$SlideOnePrevious, SlideTwo: self.$SlideTwo, SlideTwoPrevious: self.$SlideTwoPrevious, color: self.color)
-                    .animation(.default)
+                    .transition(AnyTransition.slide)
+                    .animation(.easeInOut)
                 
                 Spacer()
-                
                 
                 if self.SlideTwo == false {
                     Text("Pular")

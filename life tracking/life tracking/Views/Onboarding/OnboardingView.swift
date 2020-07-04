@@ -10,6 +10,7 @@ import SwiftUI
 
 // MARK: - Onboarding View
 struct OnboardingView: View {
+    
     @State var SlideGesture = CGSize.zero
     @State var SlideOne = false
     @State var SlideOnePrevious = false
@@ -122,6 +123,15 @@ struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             OnboardingView()
+                .environmentObject(ViewRouter())
+            
+            OnboardingView()
+                .environmentObject(ViewRouter())
+                .environment(\.colorScheme, .light)
+            
+            OnboardingView()
+                .environmentObject(ViewRouter())
+                .environment(\.colorScheme, .dark)
         }
     }
 }
@@ -148,6 +158,7 @@ private struct BottomView: View {
                 }
                 .frame(width: bounds.size.width, height: bounds.size.height / 3)
                 .background(RoundedCorners(color: Color(#colorLiteral(red: 0.1545439363, green: 0.1904585063, blue: 0.3149669468, alpha: 1)), tl: 20, tr: 20, bl: 0, br: 0))
+                .background(BlurRepresentable(style: .systemMaterial))
             }
         }
     }
@@ -220,7 +231,8 @@ private struct PageView: View {
 
 // MARK: - Bottom
 private struct Bottom: View {
-        
+    @EnvironmentObject var viewRouter: ViewRouter
+
     @Binding var SlideOne: Bool
     @Binding var SlideOnePrevious: Bool
     @Binding var SlideTwo: Bool
@@ -251,11 +263,11 @@ private struct Bottom: View {
                                 self.SlideOne = true
                                 self.SlideTwo = true
                             }
-                    }
-                    .frame(width: 100, height: 40)
-                    .background(Color(#colorLiteral(red: 0.8160262704, green: 0.2080340981, blue: 0.3583145738, alpha: 1)))
-                    .cornerRadius(10)
-                    .animation(.default)
+                        }
+                        .frame(width: 100, height: 40)
+                        .background(Color(#colorLiteral(red: 0.8160262704, green: 0.2080340981, blue: 0.3583145738, alpha: 1)))
+                        .cornerRadius(10)
+                        .animation(.default)
                 } else {
                     Text("Começar")
                         .font(.headline)
@@ -265,6 +277,9 @@ private struct Bottom: View {
                         .background(Color(#colorLiteral(red: 0.8160262704, green: 0.2080340981, blue: 0.3583145738, alpha: 1)))
                         .cornerRadius(10)
                         .animation(.default)
+                        .onTapGesture {
+                            self.viewRouter.currentPage = "homeView"
+                        }
                 }
                 
             }

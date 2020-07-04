@@ -9,13 +9,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var viewRouter: ViewRouter
+    
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            if viewRouter.currentPage == "onboardingView" {
+                OnboardingView()
+            } else if viewRouter.currentPage == "homeView" {
+                HomeView()
+            }
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(ViewRouter())
     }
 }

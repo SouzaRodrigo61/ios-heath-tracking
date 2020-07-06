@@ -124,14 +124,6 @@ struct OnboardingView_Previews: PreviewProvider {
         Group {
             OnboardingView()
                 .environmentObject(ViewRouter())
-            
-            OnboardingView()
-                .environmentObject(ViewRouter())
-                .environment(\.colorScheme, .light)
-            
-            OnboardingView()
-                .environmentObject(ViewRouter())
-                .environment(\.colorScheme, .dark)
         }
     }
 }

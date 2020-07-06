@@ -1,0 +1,54 @@
+//
+//  HomeBottomSheet.swift
+//  life tracking
+//
+//  Created by Rodrigo Santos on 06/07/20.
+//  Copyright © 2020 Rodrigo Santos. All rights reserved.
+//
+
+import SwiftUI
+
+struct HomeBottomSheet: View {
+    
+    @Binding var bottomSheetShown: Bool
+    let geometry: GeometryProxy
+    
+    var body: some View {
+        BottomSheetView(
+            isOpen: self.$bottomSheetShown,
+            maxHeight: geometry.size.height * 0.7
+        ) {
+            VStack(spacing: 20) {
+                HStack {
+                    Text("This certificate is proof that Meng To has achieved the UI Design course with approval from a Design+Code instructor.")
+                        .multilineTextAlignment(.center)
+                        .font(.subheadline)
+                        .lineSpacing(4)
+                }
+                .padding(20)
+                
+                if self.bottomSheetShown {
+                    HStack(spacing: 20) {
+                        RingView(show: .constant(true), color1: #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1), color2: #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1), width: 88, height: 88, percent: 60)
+                            .animation(Animation.easeInOut.delay(0.3))
+                        
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("SwiftUI Prototype")
+                                .fontWeight(.bold)
+                            Text("12 of 12 sections completed \n10 hours spent so far")
+                                .font(.footnote)
+                                .foregroundColor(.gray)
+                                .lineSpacing(4)
+                        }
+                        .padding(20)
+                        .background(Color("background3"))
+                        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                        .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 10)
+                    }
+                    .animation(.spring())
+                }
+            }
+        }
+        .edgesIgnoringSafeArea(.bottom)
+    }
+}

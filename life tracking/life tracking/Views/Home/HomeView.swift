@@ -9,22 +9,49 @@
 import SwiftUI
 import SwiftUICharts
 
+struct LastDays: Identifiable {
+    let id: UUID
+    var date: Date
+}
+
 //MARK: - Home View
 struct HomeView: View {
-    @State var search = ""
     
-    
+    @State private var bottomSheetShown = false
+    @State var currentDate = Date()
     
     var body: some View {
-        ZStack {
+        VStack {
             
-            Color("background")
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack {
-                Text("May")
-                Text("25th")
-                Spacer()
+            GeometryReader { geometry in
+                
+                VStack(alignment: .leading) {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Welcome")
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                            
+                            Text(self.format(date: self.currentDate))
+                                .font(.subheadline)
+                                .fontWeight(.regular)
+                        }
+                        .padding(.top, 10)
+                        
+                        Spacer()
+                        
+                        VStack {
+                            Image(systemName: "person.crop.circle.badge.plus")
+                                .font(.largeTitle)
+                        }
+                        .padding(.top, 10)
+                        
+                    }
+                    .padding(.horizontal, 20)
+                    
+                }
+                
+                HomeBottomSheet(bottomSheetShown: self.$bottomSheetShown, geometry: geometry)
             }
         }
     }
@@ -34,10 +61,9 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             HomeView()
-                .environment(\.colorScheme, .light)
-
-            HomeView()
-                .environment(\.colorScheme, .dark)
         }        
     }
 }
+
+
+

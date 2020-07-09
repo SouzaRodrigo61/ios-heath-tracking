@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-fileprivate enum Constants {
+enum Constants {
     static let radius: CGFloat = 16
     static let indicatorHeight: CGFloat = 6
     static let indicatorWidth: CGFloat = 60

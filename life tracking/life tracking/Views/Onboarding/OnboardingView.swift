@@ -150,7 +150,6 @@ private struct BottomView: View {
                 }
                 .frame(width: bounds.size.width, height: bounds.size.height / 3)
                 .background(RoundedCorners(color: Color(#colorLiteral(red: 0.1545439363, green: 0.1904585063, blue: 0.3149669468, alpha: 1)), tl: 20, tr: 20, bl: 0, br: 0))
-                .background(BlurRepresentable(style: .systemMaterial))
             }
         }
     }

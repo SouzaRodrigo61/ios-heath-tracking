@@ -7,53 +7,34 @@
 //
 
 import SwiftUI
-import SwiftUICharts
 
-struct LastDays: Identifiable {
-    let id: UUID
-    var date: Date
-}
 
 //MARK: - Home View
 struct HomeView: View {
     
     @State private var bottomSheetShown = false
-    @State var currentDate = Date()
+    @State var showProfile: Bool = false
+    
+    @State var value = 1
     
     var body: some View {
         VStack {
             
             GeometryReader { geometry in
                 
-                VStack(alignment: .leading) {
-                    HStack {
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text("Welcome")
-                                .font(.largeTitle)
-                                .fontWeight(.bold)
-                            
-                            Text(self.format(date: self.currentDate))
-                                .font(.subheadline)
-                                .fontWeight(.regular)
-                        }
-                        .padding(.top, 10)
-                        
-                        Spacer()
-                        
-                        VStack {
-                            Image(systemName: "person.crop.circle.badge.plus")
-                                .font(.largeTitle)
-                        }
-                        .padding(.top, 10)
-                        
-                    }
-                    .padding(.horizontal, 20)
+                VStack(alignment: .center) {
+                    HeaderComponent(showProfile: self.$showProfile, value: self.$value)
+                        .padding(.bottom, 15)
                     
                 }
                 
                 HomeBottomSheet(bottomSheetShown: self.$bottomSheetShown, geometry: geometry)
             }
         }
+        .background(
+            BlurRepresentable(style: .regular)
+                .edgesIgnoringSafeArea(.all)
+            )
     }
 }
 
@@ -64,6 +45,3 @@ struct HomeView_Previews: PreviewProvider {
         }        
     }
 }
-
-
-

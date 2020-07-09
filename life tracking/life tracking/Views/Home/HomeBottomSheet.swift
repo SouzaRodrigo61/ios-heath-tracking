@@ -20,12 +20,25 @@ struct HomeBottomSheet: View {
         ) {
             VStack(spacing: 20) {
                 HStack {
-                    Text("This certificate is proof that Meng To has achieved the UI Design course with approval from a Design+Code instructor.")
-                        .multilineTextAlignment(.center)
-                        .font(.subheadline)
-                        .lineSpacing(4)
+                    VStack(alignment: .leading) {
+                        Text("Brasilia")
+                            .font(.title)
+                            .fontWeight(.semibold)
+                        HStack(spacing: 10) {
+                            HStack {
+                                Image(systemName: "person.fill")
+                                Text("5 pessoas perto de mim")
+                            }
+
+                            HStack {
+                                Image(systemName: "mappin.and.ellipse")
+                                Text("Safe Zone")
+                            }
+                        }
+                    }
+                    Spacer()
                 }
-                .padding(20)
+                .padding(.horizontal, 20)
                 
                 if self.bottomSheetShown {
                     HStack(spacing: 20) {
@@ -41,7 +54,7 @@ struct HomeBottomSheet: View {
                                 .lineSpacing(4)
                         }
                         .padding(20)
-                        .background(Color("background3"))
+//                        .background(Color("background3"))
                         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
                         .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 10)
                     }

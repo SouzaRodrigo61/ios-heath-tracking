@@ -43,6 +43,7 @@ struct HeaderComponent: View {
                     Image(systemName: "person.crop.circle.badge.plus")
                         .font(.largeTitle)
                 }
+                .padding()
                 .sheet(isPresented: self.$showProfile) {
                     CreateUser(value: self.$value, showProfile: self.$showProfile)
                 }

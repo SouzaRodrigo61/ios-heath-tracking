@@ -23,6 +23,8 @@
 		5B65F68E24AEA4DA0049BA64 /* OnboardingTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B65F68D24AEA4DA0049BA64 /* OnboardingTwo.swift */; };
 		5B65F69024AEA62B0049BA64 /* OnboardingThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B65F68F24AEA62B0049BA64 /* OnboardingThree.swift */; };
 		5B65F69224AEC4040049BA64 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B65F69124AEC4040049BA64 /* RoundedCorners.swift */; };
+		5B710BBA24B795DE001BDA8B /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B710BB924B795DE001BDA8B /* UserStore.swift */; };
+		5B710BBC24B822D1001BDA8B /* CreateUser+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B710BBB24B822D1001BDA8B /* CreateUser+Extension.swift */; };
 		5B968F5E24A053620020AB5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B968F5D24A053620020AB5D /* AppDelegate.swift */; };
 		5B968F6024A053620020AB5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B968F5F24A053620020AB5D /* SceneDelegate.swift */; };
 		5B968F6224A053620020AB5D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B968F6124A053620020AB5D /* ContentView.swift */; };
@@ -74,6 +76,8 @@
 		5B65F68D24AEA4DA0049BA64 /* OnboardingTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTwo.swift; sourceTree = "<group>"; };
 		5B65F68F24AEA62B0049BA64 /* OnboardingThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingThree.swift; sourceTree = "<group>"; };
 		5B65F69124AEC4040049BA64 /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
+		5B710BB924B795DE001BDA8B /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
+		5B710BBB24B822D1001BDA8B /* CreateUser+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateUser+Extension.swift"; sourceTree = "<group>"; };
 		5B968F5A24A053620020AB5D /* life tracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "life tracking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B968F5D24A053620020AB5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B968F5F24A053620020AB5D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				5B63EACF24B3E90300EB421A /* CreateUser.swift */,
+				5B710BBB24B822D1001BDA8B /* CreateUser+Extension.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 			children = (
 				5BE16C6924B0135400E7CEB7 /* ViewRouter.swift */,
 				5B37B8C924B6CEED00E3E619 /* KeyboardGuardian.swift */,
+				5B710BB924B795DE001BDA8B /* UserStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -491,6 +497,7 @@
 				5B3DA15424A829590010A54D /* BlurRepresentable.swift in Sources */,
 				5B36726524B39DAC00FD3FCA /* HomeBottomSheet.swift in Sources */,
 				5B37B8C324B6534800E3E619 /* HeaderComponent.swift in Sources */,
+				5B710BBA24B795DE001BDA8B /* UserStore.swift in Sources */,
 				5B37B8C624B69ACC00E3E619 /* AdaptsToSoftwareKeyboard.swift in Sources */,
 				5B36726324B26A4E00FD3FCA /* BottomSheetView.swift in Sources */,
 				5B65F68C24AE34F00049BA64 /* OnboardingOne.swift in Sources */,
@@ -499,6 +506,7 @@
 				5B36726024B25F0800FD3FCA /* RingView.swift in Sources */,
 				5B65F69224AEC4040049BA64 /* RoundedCorners.swift in Sources */,
 				5BB6D95924A826E0009F2744 /* CardComponent.swift in Sources */,
+				5B710BBC24B822D1001BDA8B /* CreateUser+Extension.swift in Sources */,
 				5B968F9624A0E1A70020AB5D /* ButtonCustomize.swift in Sources */,
 				5BE4FE0C24A14DAB001EB4D3 /* SearchComponent.swift in Sources */,
 				5B65F68E24AEA4DA0049BA64 /* OnboardingTwo.swift in Sources */,

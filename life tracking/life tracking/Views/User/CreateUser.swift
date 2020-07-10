@@ -15,16 +15,23 @@ struct CreateUser: View {
     
     @Binding var value: Int
     @Binding var showProfile: Bool
-
-    @ObservedObject private var kGuardian = KeyboardGuardian(textFieldCount: 5)
+    
+    @ObservedObject var kGuardian = KeyboardGuardian(textFieldCount: 5)
     
     
-    @State private var email: String = ""
-    @State private var name: String = ""
-    @State private var phone: String = ""
-    @State private var birthday: String = ""
-    @State private var gender: String = ""
-
+    @State var email: String = ""
+    @State var name: String = ""
+    @State var phone: String = ""
+    @State var birthday: String = ""
+    @State var gender: String = ""
+    
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter
+    }
+    
+    @State var birthDate = Date()
     
     var body: some View {
         VStack {
@@ -56,13 +63,7 @@ struct CreateUser: View {
                     
                     VStack {
                         
-                        VStack {
-                            if self.kGuardian.keyboardIsHidden {
-                                Image(uiImage: #imageLiteral(resourceName: "user"))
-                            }
-                        }
-                        .padding()
-                        .animation(.easeInOut)
+                        ImageHeaderView(value: self.$value)
                         
                         VStack(spacing: 20) {
                             Text("Passo \(self.value) / \(MAXIMUN_STEPS)")
@@ -75,7 +76,7 @@ struct CreateUser: View {
                             self.headerContentView()
                                 .padding(.horizontal, 20)
                         }
-                            .animation(.default)
+                        .animation(.default)
                         
                         if self.value > 4 {
                             Spacer()
@@ -92,7 +93,7 @@ struct CreateUser: View {
                         }
                         
                         
-                        ContinueButton(value: self.$value, showProfile: self.$showProfile, email: self.$email, name: self.$name, phone: self.$phone, birthday: self.$birthday, gender: self.$gender)
+                        ContinueButton(value: self.$value, showProfile: self.$showProfile, email: self.$email, name: self.$name, phone: self.$phone, gender: self.$gender, birthDate: self.$birthDate)
                         
                         if self.value < 5 {
                             if self.kGuardian.keyboardIsHidden  {
@@ -108,106 +109,20 @@ struct CreateUser: View {
                 }
             }
         }.background(
-        BlurRepresentable(style: .systemThinMaterial)
-            .edgesIgnoringSafeArea(.all))
+            BlurRepresentable(style: .systemThinMaterial)
+                .edgesIgnoringSafeArea(.all))
         
     }
     
-    func headerContentView() -> AnyView {
-        switch self.value {
-        case 1:
-            return AnyView(
-                Text("Vamos começar com seu nome completo")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .multilineTextAlignment(.center)
-                    .animation(.default)
-            )
-        case 2:
-            return AnyView(
-                Text("Agora vamos cadastrar o email")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .multilineTextAlignment(.center)
-                    .animation(.default)
-            )
-        case 3:
-            return AnyView(
-                Text("Agora vamos cadastrar o telefone")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .multilineTextAlignment(.center)
-                    .animation(.default)
-            )
-        case 4:
-            return AnyView(
-                Text("Agora vamos cadastrar o data de nascimento")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .multilineTextAlignment(.center)
-                    .animation(.default)
-            )
-        case 5:
-            return AnyView(
-                Text("Agora vamos cadastrar o genero")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .multilineTextAlignment(.center)
-                    .animation(.default)
-            )
-        case 6:
-            return AnyView(
-                Text("Podemos usar a sua localização?")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .multilineTextAlignment(.center)
-                    .animation(.default)
-            )
-        default:
-            return AnyView(Text(""))
-        }
-    }
-    
-    func bodyContentView(bounds: GeometryProxy) -> AnyView {
-        
-        switch self.value {
-        case 1:
-            return AnyView(
-                AdaptativeTextField(text: self.$name, bounds: bounds, keyboardType: .namePhonePad)
-                    .padding(.horizontal, 20)
-            )
-        case 2:
-            return AnyView(
-                AdaptativeTextField(text: self.$email, bounds: bounds, keyboardType: .emailAddress)
-                    .padding(.horizontal, 20)
-            )
-        case 3:
-            return AnyView(
-                AdaptativeTextField(text: self.$phone, bounds: bounds, keyboardType: .phonePad, icon: Image(systemName: "phone.fill"))
-                    .padding(.horizontal, 20)
-            )
-        case 4:
-            return AnyView(
-                AdaptativeTextField(text: self.$birthday, bounds: bounds, keyboardType: .numberPad, icon: Image(systemName: "calendar"))
-                    .padding(.horizontal, 20)
-            )
-        case 5:
-            return AnyView(AskAboutGenre())
-        case 6:
-            return AnyView(AskAboutLocation())
-        default:
-            return AnyView(Text(""))
-        }
+}
+
+struct CreateUser_Previews: PreviewProvider {
+    static var previews: some View {
+        CreateUser(value: .constant(1), showProfile: .constant(true))
     }
 }
 
-//struct CreateUser_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CreateUser(value: .constant(1), showProfile: .constant(true))
-//    }
-//}
-
-private struct AdaptativeTextField: View {
+struct AdaptativeTextField: View {
     @Binding var text: String
     
     var bounds: GeometryProxy
@@ -218,9 +133,7 @@ private struct AdaptativeTextField: View {
         VStack {
             HStack {
                 icon
-                TextField("", text: $text){
-                    // Called when the user tap the return button
-                    // see `onCommit` on TextField initializer.
+                TextField("", text: $text) {
                     UIApplication.shared.endEditing()
                 }
                 .keyboardType(keyboardType)
@@ -237,7 +150,7 @@ private struct AdaptativeTextField: View {
     }
 }
 
-private struct AskAboutLocation: View {
+struct AskAboutLocation: View {
     var body: some View {
         VStack {
             Text("Para podemos fazer localizar onde voce mora para podemos passar as informacoes da sua regiao com mais propriedade para você")
@@ -249,7 +162,7 @@ private struct AskAboutLocation: View {
     }
 }
 
-private struct AskAboutGenre: View {
+struct AskAboutGenre: View {
     var body: some View {
         VStack {
             HStack {
@@ -274,12 +187,12 @@ struct ContinueButton: View {
     @Binding var value: Int
     @Binding var showProfile: Bool
     
-    
     @Binding var email: String
     @Binding var name: String
     @Binding var phone: String
-    @Binding var birthday: String
     @Binding var gender: String
+    @Binding var birthDate: Date
+    
     
     var body: some View {
         Button(action: {
@@ -293,7 +206,7 @@ struct ContinueButton: View {
                 print("email: ", self.email)
                 print("name: ", self.name)
                 print("phone: ", self.phone)
-                print("birthday: ", self.birthday)
+                print("birthday: ", self.birthDate)
                 
                 self.showProfile = false
                 
@@ -313,3 +226,21 @@ struct ContinueButton: View {
     }
 }
 
+struct ImageHeaderView: View {
+    
+    @Binding var value: Int
+    
+    @ObservedObject var kGuardian = KeyboardGuardian(textFieldCount: 5)
+    
+    var body: some View {
+        VStack {
+            if self.kGuardian.keyboardIsHidden && self.value < 4 {
+                Image(uiImage: #imageLiteral(resourceName: "user"))
+            } else if self.value == 6 {
+                Image(uiImage: #imageLiteral(resourceName: "user"))
+            }
+        }
+        .padding()
+        .animation(.easeInOut)
+    }
+}

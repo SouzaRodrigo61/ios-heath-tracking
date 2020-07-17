@@ -89,7 +89,7 @@ extension CreateUser {
                     .padding(.horizontal, 20)
             )
         case 5:
-            return AnyView(AskAboutGenre())
+            return AnyView(AskAboutGenre(genrer: $genrer))
         case 6:
             return AnyView(AskAboutLocation())
         default:

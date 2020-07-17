@@ -13,6 +13,7 @@ fileprivate let MAXIMUN_STEPS = 6
 
 struct CreateUser: View {
     
+    
     @Binding var value: Int
     @Binding var showProfile: Bool
     
@@ -23,7 +24,7 @@ struct CreateUser: View {
     @State var name: String = ""
     @State var phone: String = ""
     @State var birthday: String = ""
-    @State var gender: String = ""
+    @State var genrer: Int = 0
     
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -93,7 +94,7 @@ struct CreateUser: View {
                         }
                         
                         
-                        ContinueButton(value: self.$value, showProfile: self.$showProfile, email: self.$email, name: self.$name, phone: self.$phone, gender: self.$gender, birthDate: self.$birthDate)
+                        ContinueButton(value: self.$value, showProfile: self.$showProfile, email: self.$email, name: self.$name, phone: self.$phone, genrer: self.$genrer, birthDate: self.$birthDate)
                         
                         if self.value < 5 {
                             if self.kGuardian.keyboardIsHidden  {
@@ -122,125 +123,4 @@ struct CreateUser_Previews: PreviewProvider {
     }
 }
 
-struct AdaptativeTextField: View {
-    @Binding var text: String
-    
-    var bounds: GeometryProxy
-    var keyboardType: UIKeyboardType = .default
-    var icon: Image = Image(systemName: "person.fill")
-    
-    var body: some View {
-        VStack {
-            HStack {
-                icon
-                TextField("", text: $text) {
-                    UIApplication.shared.endEditing()
-                }
-                .keyboardType(keyboardType)
-                .padding(.horizontal, 10)
-                .padding(.vertical, 10)
-                .frame(height: 50)
-            }.padding()
-        }
-        .frame(width: bounds.size.width - 80, height: 70)
-        .background(BlurRepresentable(style: .systemThinMaterial))
-        .cornerRadius(10.0)
-        .shadow(radius: 20)
-        .animation(.default)
-    }
-}
 
-struct AskAboutLocation: View {
-    var body: some View {
-        VStack {
-            Text("Para podemos fazer localizar onde voce mora para podemos passar as informacoes da sua regiao com mais propriedade para você")
-                .font(.subheadline)
-                .fontWeight(.semibold)
-                .multilineTextAlignment(.center)
-                .animation(.default)
-        }
-    }
-}
-
-struct AskAboutGenre: View {
-    var body: some View {
-        VStack {
-            HStack {
-                Text("Homem")
-                    .font(.subheadline)
-                    .fontWeight(.semibold)
-                    .multilineTextAlignment(.center)
-                    .animation(.default)
-                
-                Text("Mulher")
-                    .font(.subheadline)
-                    .fontWeight(.semibold)
-                    .multilineTextAlignment(.center)
-                    .animation(.default)
-            }
-        }
-    }
-}
-
-struct ContinueButton: View {
-    
-    @Binding var value: Int
-    @Binding var showProfile: Bool
-    
-    @Binding var email: String
-    @Binding var name: String
-    @Binding var phone: String
-    @Binding var gender: String
-    @Binding var birthDate: Date
-    
-    
-    var body: some View {
-        Button(action: {
-            UIApplication.shared.endEditing()
-            
-            self.value = (self.value + 1)
-            
-            if (self.value > MAXIMUN_STEPS) {
-                
-                
-                print("email: ", self.email)
-                print("name: ", self.name)
-                print("phone: ", self.phone)
-                print("birthday: ", self.birthDate)
-                
-                self.showProfile = false
-                
-            }
-        }) {
-            Text("Continuar")
-                .fontWeight(.semibold)
-                .foregroundColor(.white)
-                .frame(width: 300, height: 40)
-                .background(Color(#colorLiteral(red: 0.4470588235, green: 0.3960784314, blue: 0.8901960784, alpha: 1)))
-                .cornerRadius(10.0)
-                .shadow(radius: 20)
-                .padding()
-        }
-        .padding(.bottom, 10)
-        .animation(.default)
-    }
-}
-
-struct ImageHeaderView: View {
-    
-    @Binding var value: Int
-    
-    @ObservedObject var kGuardian = KeyboardGuardian(textFieldCount: 5)
-    
-    var body: some View {
-        VStack {
-            if self.kGuardian.keyboardIsHidden && self.value < 4 {
-                Image(uiImage: #imageLiteral(resourceName: "user"))
-            } else if self.value == 6 {
-                Image(uiImage: #imageLiteral(resourceName: "user"))
-            }
-        }
-        .padding()
-        .animation(.easeInOut)
-    }
-}

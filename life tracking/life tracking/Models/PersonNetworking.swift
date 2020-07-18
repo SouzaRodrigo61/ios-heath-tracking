@@ -23,13 +23,7 @@ class PersonNetworking {
         let encoder = JSONEncoder()
         
         guard let data = try? encoder.encode(user) else { return }
-        
-        print("User: \(user)")
-        print("Body Data: \(data)")
-        
-        let jsonString = String(data: data, encoding: .utf8)
-        print("JSON String : " + jsonString!)
-        
+                
         // Set HTTP Request Body
         request.httpBody = data
         
@@ -44,14 +38,10 @@ class PersonNetworking {
             
             guard let data = data else { return }
             
-            print("data: \(data)")
-            
-            let jsonString = String(data: data, encoding: .utf8)
-            print("JSON String : " + jsonString!)
-            //                let person = try! JSONDecoder().decode(Person.self, from: data)
-            //                DispatchQueue.main.async {
-            //                    completion(person)
-            //                }
+            let person = try! JSONDecoder().decode(Person.self, from: data)
+            DispatchQueue.main.async {
+                completion(person)
+            }
         }.resume()
         
     }

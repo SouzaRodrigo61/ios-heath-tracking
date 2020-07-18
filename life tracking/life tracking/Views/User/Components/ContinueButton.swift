@@ -48,24 +48,17 @@ struct ContinueButton: View {
                                 
                                 let today = self.birthDate
                                 let dateFormater = DateFormatter()
-                                dateFormater.dateFormat = "yyyy-MM-dd"
-//                                dateFormater.dateStyle = .short
                                 print(dateFormater.string(from: today))
 
                                 let person: Person = Person(city: (firstLocation?.locality!)!, district: (firstLocation?.subLocality!)!, gender: self.genrer == 1 ? "MASCULINO" : "FEMININO", id: ID(birthday: dateFormater.string(from: today), email: self.email), name: self.name, phone: self.phone)
-//
+
+                                self.store.setPost(user: person)
+                                
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
 
-
-                                    self.store.setPost(user: person)
-//                                    print(person)
-                                    
                                     self.isLoading = false
                                     self.isSuccess = true
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-
-                                        
-                                        
                                         self.showProfile = false
                                     }
                                 }

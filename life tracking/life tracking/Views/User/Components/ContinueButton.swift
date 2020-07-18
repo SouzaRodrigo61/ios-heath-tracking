@@ -12,6 +12,10 @@ import CoreLocation
 fileprivate let MAXIMUN_STEPS = 6
 struct ContinueButton: View {
     
+    
+    @ObservedObject var store = PersonStore()
+    
+    
     @Binding var value: Int
     @Binding var showProfile: Bool
     
@@ -23,33 +27,56 @@ struct ContinueButton: View {
     
     let locationFetcher = LocationFetcher()
     
+    @Binding var isLoading: Bool
+    @Binding var isSuccess: Bool
     
     var body: some View {
-        VStack {
+        ZStack {
             Button(action: {
                 UIApplication.shared.endEditing()
                 
-                self.value = (self.value + 1)
                 
-                if (self.value > MAXIMUN_STEPS) {
+                if (self.value >= MAXIMUN_STEPS) {
+                    self.isLoading = true
+                    
                     if let location = self.locationFetcher.userLocation {
                         let geoCoder = CLGeocoder()
                         
                         geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) in
                             if error == nil {
                                 let firstLocation = placemarks?[0]
+                                
+                                let today = self.birthDate
+                                let dateFormater = DateFormatter()
+                                dateFormater.dateFormat = "yyyy-MM-dd"
+//                                dateFormater.dateStyle = .short
+                                print(dateFormater.string(from: today))
 
-                                let person = Person(city: (firstLocation?.locality!)!, district: (firstLocation?.subLocality!)!, gender: self.genrer == 1 ? "MASCULINO" : "FEMININO", id: PersonID(email: self.email, birthday: self.birthDate), name: self.name, phone: self.phone)
-                                
-                                print(person)
-                                
+                                let person: Person = Person(city: (firstLocation?.locality!)!, district: (firstLocation?.subLocality!)!, gender: self.genrer == 1 ? "MASCULINO" : "FEMININO", id: ID(birthday: dateFormater.string(from: today), email: self.email), name: self.name, phone: self.phone)
+//
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+
+
+                                    self.store.setPost(user: person)
+//                                    print(person)
+                                    
+                                    self.isLoading = false
+                                    self.isSuccess = true
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+
+                                        
+                                        
+                                        self.showProfile = false
+                                    }
+                                }
                             }
                             
                         })
                     }
                     
-                    self.showProfile = false
                     
+                } else if self.value <= MAXIMUN_STEPS {
+                    self.value = (self.value + 1)
                 }
             }) {
                 Text("Continuar")
@@ -63,12 +90,13 @@ struct ContinueButton: View {
             }
             .padding(.bottom, 10)
             .animation(.default)
+            
         }
     }
 }
 
 struct ContinueButton_Previews: PreviewProvider {
     static var previews: some View {
-        ContinueButton(value: .constant(1), showProfile: .constant(true), email: .constant(""), name: .constant(""), phone: .constant(""), genrer: .constant(0), birthDate: .constant(Date()))
+        ContinueButton(value: .constant(1), showProfile: .constant(true), email: .constant(""), name: .constant(""), phone: .constant(""), genrer: .constant(0), birthDate: .constant(Date()), isLoading: .constant(true), isSuccess: .constant(false))
     }
 }

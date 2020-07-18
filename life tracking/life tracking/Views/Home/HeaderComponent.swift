@@ -28,8 +28,10 @@ struct HeaderComponent: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                 
+                
                 Text(format(date: self.currentDate))
-                    .foregroundColor(Color.secondary)
+                .foregroundColor(Color.secondary)
+
             }
             .padding(.top, 10)
             

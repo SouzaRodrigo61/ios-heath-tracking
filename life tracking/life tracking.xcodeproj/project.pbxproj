@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,13 +17,21 @@
 		5B37B8CA24B6CEED00E3E619 /* KeyboardGuardian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B37B8C924B6CEED00E3E619 /* KeyboardGuardian.swift */; };
 		5B3DA15424A829590010A54D /* BlurRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA15324A829590010A54D /* BlurRepresentable.swift */; };
 		5B3DA15924A833FE0010A54D /* MapRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA15824A833FE0010A54D /* MapRepresentable.swift */; };
+		5B5415A524C1E3CF00C01816 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B5415A424C1E3CF00C01816 /* loading.json */; };
+		5B5415A724C1FC4B00C01816 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5415A624C1FC4B00C01816 /* Person.swift */; };
+		5B5415A924C2883F00C01816 /* PersonNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5415A824C2883F00C01816 /* PersonNetworking.swift */; };
 		5B63EAD024B3E90300EB421A /* CreateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B63EACF24B3E90300EB421A /* CreateUser.swift */; };
 		5B63EAD224B3E98400EB421A /* SegmentedProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B63EAD124B3E98400EB421A /* SegmentedProgressView.swift */; };
 		5B65F68C24AE34F00049BA64 /* OnboardingOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B65F68B24AE34F00049BA64 /* OnboardingOne.swift */; };
 		5B65F68E24AEA4DA0049BA64 /* OnboardingTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B65F68D24AEA4DA0049BA64 /* OnboardingTwo.swift */; };
 		5B65F69024AEA62B0049BA64 /* OnboardingThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B65F68F24AEA62B0049BA64 /* OnboardingThree.swift */; };
 		5B65F69224AEC4040049BA64 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B65F69124AEC4040049BA64 /* RoundedCorners.swift */; };
-		5B710BBA24B795DE001BDA8B /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B710BB924B795DE001BDA8B /* UserStore.swift */; };
+		5B6AAABC24C1E1A70044739D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AAABA24C1E1A70044739D /* LoadingView.swift */; };
+		5B6AAABD24C1E1A70044739D /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AAABB24C1E1A70044739D /* SuccessView.swift */; };
+		5B6AAABF24C1E1F50044739D /* LottieRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AAABE24C1E1F50044739D /* LottieRepresentable.swift */; };
+		5B6AAAC224C1E2730044739D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5B6AAAC124C1E2730044739D /* Lottie */; };
+		5B6AAAC424C1E3730044739D /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B6AAAC324C1E3730044739D /* success.json */; };
+		5B710BBA24B795DE001BDA8B /* PersonStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B710BB924B795DE001BDA8B /* PersonStore.swift */; };
 		5B710BBC24B822D1001BDA8B /* CreateUser+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B710BBB24B822D1001BDA8B /* CreateUser+Extension.swift */; };
 		5B8182F924C1112300E0CE4C /* AskAboutGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8182F824C1112300E0CE4C /* AskAboutGenre.swift */; };
 		5B8182FB24C1154100E0CE4C /* AskAboutLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8182FA24C1154100E0CE4C /* AskAboutLocation.swift */; };
@@ -40,7 +48,6 @@
 		5B968F8024A053690020AB5D /* life_trackingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B968F7F24A053690020AB5D /* life_trackingUITests.swift */; };
 		5B968F9624A0E1A70020AB5D /* ButtonCustomize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B968F9524A0E1A70020AB5D /* ButtonCustomize.swift */; };
 		5B968F9C24A0E8CC0020AB5D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B968F9B24A0E8CC0020AB5D /* OnboardingView.swift */; };
-		5B99106D24C1376600302834 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99106C24C1376600302834 /* Person.swift */; };
 		5B99106F24C13EAB00302834 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99106E24C13EAB00302834 /* LocationManager.swift */; };
 		5BB6D95924A826E0009F2744 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB6D95824A826E0009F2744 /* CardComponent.swift */; };
 		5BE16C6A24B0135400E7CEB7 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE16C6924B0135400E7CEB7 /* ViewRouter.swift */; };
@@ -77,13 +84,20 @@
 		5B37B8C924B6CEED00E3E619 /* KeyboardGuardian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGuardian.swift; sourceTree = "<group>"; };
 		5B3DA15324A829590010A54D /* BlurRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurRepresentable.swift; sourceTree = "<group>"; };
 		5B3DA15824A833FE0010A54D /* MapRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRepresentable.swift; sourceTree = "<group>"; };
+		5B5415A424C1E3CF00C01816 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loading.json; path = ../../../../../../Downloads/DesignCode/DesignCode/Lottie/loading.json; sourceTree = "<group>"; };
+		5B5415A624C1FC4B00C01816 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		5B5415A824C2883F00C01816 /* PersonNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersonNetworking.swift; path = "life tracking/Models/PersonNetworking.swift"; sourceTree = SOURCE_ROOT; };
 		5B63EACF24B3E90300EB421A /* CreateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUser.swift; sourceTree = "<group>"; };
 		5B63EAD124B3E98400EB421A /* SegmentedProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedProgressView.swift; sourceTree = "<group>"; };
 		5B65F68B24AE34F00049BA64 /* OnboardingOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingOne.swift; sourceTree = "<group>"; };
 		5B65F68D24AEA4DA0049BA64 /* OnboardingTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTwo.swift; sourceTree = "<group>"; };
 		5B65F68F24AEA62B0049BA64 /* OnboardingThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingThree.swift; sourceTree = "<group>"; };
 		5B65F69124AEC4040049BA64 /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
-		5B710BB924B795DE001BDA8B /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
+		5B6AAABA24C1E1A70044739D /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		5B6AAABB24C1E1A70044739D /* SuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
+		5B6AAABE24C1E1F50044739D /* LottieRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieRepresentable.swift; sourceTree = "<group>"; };
+		5B6AAAC324C1E3730044739D /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = success.json; path = ../../../../../../Downloads/DesignCode/DesignCode/Lottie/success.json; sourceTree = "<group>"; };
+		5B710BB924B795DE001BDA8B /* PersonStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonStore.swift; sourceTree = "<group>"; };
 		5B710BBB24B822D1001BDA8B /* CreateUser+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateUser+Extension.swift"; sourceTree = "<group>"; };
 		5B8182F824C1112300E0CE4C /* AskAboutGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskAboutGenre.swift; sourceTree = "<group>"; };
 		5B8182FA24C1154100E0CE4C /* AskAboutLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskAboutLocation.swift; sourceTree = "<group>"; };
@@ -106,7 +120,6 @@
 		5B968F8124A053690020AB5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B968F9524A0E1A70020AB5D /* ButtonCustomize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustomize.swift; sourceTree = "<group>"; };
 		5B968F9B24A0E8CC0020AB5D /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		5B99106C24C1376600302834 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		5B99106E24C13EAB00302834 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		5BB6D95824A826E0009F2744 /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
 		5BE16C6924B0135400E7CEB7 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
@@ -120,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B6AAAC224C1E2730044739D /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +196,7 @@
 		5B3DA15224A829390010A54D /* Representables */ = {
 			isa = PBXGroup;
 			children = (
+				5B6AAABE24C1E1F50044739D /* LottieRepresentable.swift */,
 				5B3DA15324A829590010A54D /* BlurRepresentable.swift */,
 				5B3DA15824A833FE0010A54D /* MapRepresentable.swift */,
 				5B37B8C724B69BE500E3E619 /* CustomTextField.swift */,
@@ -197,6 +212,24 @@
 				5B710BBB24B822D1001BDA8B /* CreateUser+Extension.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		5B6AAAB424C1DD7E0044739D /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				5B5415A424C1E3CF00C01816 /* loading.json */,
+				5B6AAAC324C1E3730044739D /* success.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		5B6AAAB924C1E1840044739D /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				5B6AAABA24C1E1A70044739D /* LoadingView.swift */,
+				5B6AAABB24C1E1A70044739D /* SuccessView.swift */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		5B81830224C115E500E0CE4C /* Components */ = {
@@ -234,6 +267,7 @@
 		5B968F5C24A053620020AB5D /* life tracking */ = {
 			isa = PBXGroup;
 			children = (
+				5B6AAAB424C1DD7E0044739D /* Lottie */,
 				5B05BDC024A8D98000A8B004 /* Helpers */,
 				5B968F9424A0E10E0020AB5D /* Mockups */,
 				5B968F9324A0E0FE0020AB5D /* Models */,
@@ -282,6 +316,7 @@
 		5B968F8D24A0E0530020AB5D /* Layout */ = {
 			isa = PBXGroup;
 			children = (
+				5B6AAAB924C1E1840044739D /* Animations */,
 				5B37B8C424B69A6800E3E619 /* Modifier */,
 				5B05BDBE24A8D79800A8B004 /* Charts */,
 				5B3DA15224A829390010A54D /* Representables */,
@@ -306,7 +341,7 @@
 				5B99106E24C13EAB00302834 /* LocationManager.swift */,
 				5BE16C6924B0135400E7CEB7 /* ViewRouter.swift */,
 				5B37B8C924B6CEED00E3E619 /* KeyboardGuardian.swift */,
-				5B710BB924B795DE001BDA8B /* UserStore.swift */,
+				5B710BB924B795DE001BDA8B /* PersonStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -314,6 +349,7 @@
 		5B968F9024A0E0A20020AB5D /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				5B5415A824C2883F00C01816 /* PersonNetworking.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -343,7 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				5B37B8C024B5FBB900E3E619 /* LastDays.swift */,
-				5B99106C24C1376600302834 /* Person.swift */,
+				5B5415A624C1FC4B00C01816 /* Person.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -393,6 +429,7 @@
 			);
 			name = "life tracking";
 			packageProductDependencies = (
+				5B6AAAC124C1E2730044739D /* Lottie */,
 			);
 			productName = "life tracking";
 			productReference = 5B968F5A24A053620020AB5D /* life tracking.app */;
@@ -467,6 +504,7 @@
 			);
 			mainGroup = 5B968F5124A053620020AB5D;
 			packageReferences = (
+				5B6AAAC024C1E2730044739D /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 5B968F5B24A053620020AB5D /* Products */;
 			projectDirPath = "";
@@ -485,8 +523,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B968F6A24A053680020AB5D /* LaunchScreen.storyboard in Resources */,
+				5B6AAAC424C1E3730044739D /* success.json in Resources */,
 				5B968F6724A053680020AB5D /* Preview Assets.xcassets in Resources */,
 				5B968F6424A053680020AB5D /* Assets.xcassets in Resources */,
+				5B5415A524C1E3CF00C01816 /* loading.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +552,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B968F5E24A053620020AB5D /* AppDelegate.swift in Sources */,
+				5B6AAABF24C1E1F50044739D /* LottieRepresentable.swift in Sources */,
 				5B968F6024A053620020AB5D /* SceneDelegate.swift in Sources */,
 				5BE4FE0E24A14DE6001EB4D3 /* AvatarComponent.swift in Sources */,
 				5B3DA15924A833FE0010A54D /* MapRepresentable.swift in Sources */,
@@ -521,16 +562,19 @@
 				5B37B8CA24B6CEED00E3E619 /* KeyboardGuardian.swift in Sources */,
 				5B63EAD224B3E98400EB421A /* SegmentedProgressView.swift in Sources */,
 				5BE4FE0A24A0F89B001EB4D3 /* HomeView.swift in Sources */,
+				5B6AAABD24C1E1A70044739D /* SuccessView.swift in Sources */,
 				5B37B8C824B69BE500E3E619 /* CustomTextField.swift in Sources */,
 				5BE16C6A24B0135400E7CEB7 /* ViewRouter.swift in Sources */,
+				5B5415A724C1FC4B00C01816 /* Person.swift in Sources */,
 				5B3DA15424A829590010A54D /* BlurRepresentable.swift in Sources */,
 				5B36726524B39DAC00FD3FCA /* HomeBottomSheet.swift in Sources */,
-				5B99106D24C1376600302834 /* Person.swift in Sources */,
 				5B37B8C324B6534800E3E619 /* HeaderComponent.swift in Sources */,
-				5B710BBA24B795DE001BDA8B /* UserStore.swift in Sources */,
+				5B710BBA24B795DE001BDA8B /* PersonStore.swift in Sources */,
+				5B6AAABC24C1E1A70044739D /* LoadingView.swift in Sources */,
 				5B99106F24C13EAB00302834 /* LocationManager.swift in Sources */,
 				5B37B8C624B69ACC00E3E619 /* AdaptsToSoftwareKeyboard.swift in Sources */,
 				5B36726324B26A4E00FD3FCA /* BottomSheetView.swift in Sources */,
+				5B5415A924C2883F00C01816 /* PersonNetworking.swift in Sources */,
 				5B65F68C24AE34F00049BA64 /* OnboardingOne.swift in Sources */,
 				5B968F9C24A0E8CC0020AB5D /* OnboardingView.swift in Sources */,
 				5B63EAD024B3E90300EB421A /* CreateUser.swift in Sources */,
@@ -870,6 +914,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5B6AAAC024C1E2730044739D /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5B6AAAC124C1E2730044739D /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B6AAAC024C1E2730044739D /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5B968F5224A053620020AB5D /* Project object */;
 }

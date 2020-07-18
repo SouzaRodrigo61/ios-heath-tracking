@@ -34,85 +34,102 @@ struct CreateUser: View {
     
     @State var birthDate = Date()
     
+    @State var isLoading = false
+    @State var isSuccess = false
+    
+    
     var body: some View {
-        VStack {
-            
-            
-            GeometryReader { bounds in
+        ZStack {
+            VStack {
                 
-                VStack {
-                    
-                    VStack {
-                        RoundedRectangle(cornerRadius: Constants.radius)
-                            .fill(Color.secondary)
-                            .frame(
-                                width: Constants.indicatorWidth,
-                                height: Constants.indicatorHeight
-                        )
-                    }
-                    .padding(.top, 15)
-                    
-                    HStack() {
-                        
-                        SegmentedProgressView(value: self.value, maximum: MAXIMUN_STEPS, selectedColor: Color(#colorLiteral(red: 0.4470588235, green: 0.3960784314, blue: 0.8901960784, alpha: 1)))
-                            .animation(.default)
-                            .padding(.vertical)
-                        
-                    }
-                    .padding(.top, 20)
-                    .padding(.horizontal, 50)
+                
+                GeometryReader { bounds in
                     
                     VStack {
                         
-                        ImageHeaderView(value: self.$value)
+                        VStack {
+                            RoundedRectangle(cornerRadius: Constants.radius)
+                                .fill(Color.secondary)
+                                .frame(
+                                    width: Constants.indicatorWidth,
+                                    height: Constants.indicatorHeight
+                            )
+                        }
+                        .padding(.top, 15)
                         
-                        VStack(spacing: 20) {
-                            Text("Passo \(self.value) / \(MAXIMUN_STEPS)")
-                                .font(.subheadline)
-                                .fontWeight(.semibold)
-                                .foregroundColor(Color(#colorLiteral(red: 0.4470588235, green: 0.3960784314, blue: 0.8901960784, alpha: 1)))
+                        HStack() {
+                            
+                            SegmentedProgressView(value: self.value, maximum: MAXIMUN_STEPS, selectedColor: Color(#colorLiteral(red: 0.4470588235, green: 0.3960784314, blue: 0.8901960784, alpha: 1)))
                                 .animation(.default)
+                                .padding(.vertical)
                             
+                        }
+                        .padding(.top, 20)
+                        .padding(.horizontal, 50)
+                        
+                        VStack {
                             
-                            self.headerContentView()
-                                .padding(.horizontal, 20)
-                        }
-                        .animation(.default)
-                        
-                        if self.value > 4 {
-                            Spacer()
-                        }
-                        
-                        self.bodyContentView(bounds: bounds)
-                        
-                        if self.value < 5 {
-                            if !self.kGuardian.keyboardIsHidden  {
+                            ImageHeaderView(value: self.$value)
+                            
+                            VStack(spacing: 20) {
+                                Text("Passo \(self.value) / \(MAXIMUN_STEPS)")
+                                    .font(.subheadline)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(Color(#colorLiteral(red: 0.4470588235, green: 0.3960784314, blue: 0.8901960784, alpha: 1)))
+                                    .animation(.default)
+                                
+                                
+                                self.headerContentView()
+                                    .padding(.horizontal, 20)
+                            }
+                            .animation(.default)
+                            
+                            if self.value > 4 {
                                 Spacer()
                             }
-                        } else {
-                            Spacer()
-                        }
-                        
-                        
-                        ContinueButton(value: self.$value, showProfile: self.$showProfile, email: self.$email, name: self.$name, phone: self.$phone, genrer: self.$genrer, birthDate: self.$birthDate)
-                        
-                        if self.value < 5 {
-                            if self.kGuardian.keyboardIsHidden  {
+                            
+                            self.bodyContentView(bounds: bounds)
+                            
+                            if self.value < 5 {
+                                if !self.kGuardian.keyboardIsHidden  {
+                                    Spacer()
+                                }
+                            } else {
                                 Spacer()
                             }
+                            
+                            
+                            ContinueButton(value: self.$value, showProfile: self.$showProfile, email: self.$email, name: self.$name, phone: self.$phone, genrer: self.$genrer, birthDate: self.$birthDate, isLoading: self.$isLoading, isSuccess: self.$isSuccess)
+                            
+                            if self.value < 5 {
+                                if self.kGuardian.keyboardIsHidden  {
+                                    Spacer()
+                                }
+                            }
+                            
                         }
+                        .padding()
+                        .modifier(AdaptsToSoftwareKeyboard())
+                        .animation(.linear)
                         
                     }
-                    .padding()
-                    .modifier(AdaptsToSoftwareKeyboard())
-                    .animation(.linear)
-                    
                 }
             }
-        }.background(
-            BlurRepresentable(style: .systemThinMaterial)
-                .edgesIgnoringSafeArea(.all))
+            .background(
+                BlurRepresentable(style: .systemThinMaterial)
+                    .edgesIgnoringSafeArea(.all))
+            
+            if isLoading {
+                LoadingView()
+            }
+            
+            if isSuccess {
+                SuccessView()
+            }
+            
+        }
         
+
     }
     
 }

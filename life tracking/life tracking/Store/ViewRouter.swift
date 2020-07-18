@@ -20,5 +20,5 @@ class ViewRouter: ObservableObject {
     }
     
     @Published var currentPage: String
-    
 }
+

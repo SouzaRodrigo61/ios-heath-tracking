@@ -20,6 +20,7 @@
 		5B5415A524C1E3CF00C01816 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B5415A424C1E3CF00C01816 /* loading.json */; };
 		5B5415A724C1FC4B00C01816 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5415A624C1FC4B00C01816 /* Person.swift */; };
 		5B5415A924C2883F00C01816 /* PersonNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5415A824C2883F00C01816 /* PersonNetworking.swift */; };
+		5B62BE6624C4A8F700A7B416 /* JsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B62BE6524C4A8F700A7B416 /* JsonDecoder.swift */; };
 		5B63EAD024B3E90300EB421A /* CreateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B63EACF24B3E90300EB421A /* CreateUser.swift */; };
 		5B63EAD224B3E98400EB421A /* SegmentedProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B63EAD124B3E98400EB421A /* SegmentedProgressView.swift */; };
 		5B65F68C24AE34F00049BA64 /* OnboardingOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B65F68B24AE34F00049BA64 /* OnboardingOne.swift */; };
@@ -87,6 +88,7 @@
 		5B5415A424C1E3CF00C01816 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loading.json; path = ../../../../../../Downloads/DesignCode/DesignCode/Lottie/loading.json; sourceTree = "<group>"; };
 		5B5415A624C1FC4B00C01816 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		5B5415A824C2883F00C01816 /* PersonNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersonNetworking.swift; path = "life tracking/Models/PersonNetworking.swift"; sourceTree = SOURCE_ROOT; };
+		5B62BE6524C4A8F700A7B416 /* JsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonDecoder.swift; path = "life tracking/Data/JsonDecoder.swift"; sourceTree = SOURCE_ROOT; };
 		5B63EACF24B3E90300EB421A /* CreateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUser.swift; sourceTree = "<group>"; };
 		5B63EAD124B3E98400EB421A /* SegmentedProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedProgressView.swift; sourceTree = "<group>"; };
 		5B65F68B24AE34F00049BA64 /* OnboardingOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingOne.swift; sourceTree = "<group>"; };
@@ -267,6 +269,8 @@
 		5B968F5C24A053620020AB5D /* life tracking */ = {
 			isa = PBXGroup;
 			children = (
+				5B9BE24624C359F1009A30B9 /* Router */,
+				5B9BE24124C33FA9009A30B9 /* Core */,
 				5B6AAAB424C1DD7E0044739D /* Lottie */,
 				5B05BDC024A8D98000A8B004 /* Helpers */,
 				5B968F9424A0E10E0020AB5D /* Mockups */,
@@ -338,9 +342,6 @@
 		5B968F8F24A0E09B0020AB5D /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				5B99106E24C13EAB00302834 /* LocationManager.swift */,
-				5BE16C6924B0135400E7CEB7 /* ViewRouter.swift */,
-				5B37B8C924B6CEED00E3E619 /* KeyboardGuardian.swift */,
 				5B710BB924B795DE001BDA8B /* PersonStore.swift */,
 			);
 			path = Store;
@@ -357,6 +358,7 @@
 		5B968F9124A0E0B40020AB5D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5B62BE6524C4A8F700A7B416 /* JsonDecoder.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -400,6 +402,23 @@
 				5B65F68F24AEA62B0049BA64 /* OnboardingThree.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		5B9BE24124C33FA9009A30B9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				5B37B8C924B6CEED00E3E619 /* KeyboardGuardian.swift */,
+				5B99106E24C13EAB00302834 /* LocationManager.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		5B9BE24624C359F1009A30B9 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				5BE16C6924B0135400E7CEB7 /* ViewRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		5BE4FE0824A0F884001EB4D3 /* Home */ = {
@@ -587,6 +606,7 @@
 				5B8182F924C1112300E0CE4C /* AskAboutGenre.swift in Sources */,
 				5B8182FB24C1154100E0CE4C /* AskAboutLocation.swift in Sources */,
 				5B968F9624A0E1A70020AB5D /* ButtonCustomize.swift in Sources */,
+				5B62BE6624C4A8F700A7B416 /* JsonDecoder.swift in Sources */,
 				5BE4FE0C24A14DAB001EB4D3 /* SearchComponent.swift in Sources */,
 				5B65F68E24AEA4DA0049BA64 /* OnboardingTwo.swift in Sources */,
 				5B8182FD24C1157D00E0CE4C /* ContinueButton.swift in Sources */,

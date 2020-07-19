@@ -12,6 +12,8 @@ struct HeaderComponent: View {
     
     @Binding var showProfile: Bool
     @Binding var value: Int
+    @Binding var userEmail: String
+    @Binding var userBirthday: String
     
     @State var currentDate = Date()
     
@@ -47,7 +49,9 @@ struct HeaderComponent: View {
                 }
                 .padding()
                 .sheet(isPresented: self.$showProfile) {
-                    CreateUser(value: self.$value, showProfile: self.$showProfile)
+                    CreateUser(value: self.$value, showProfile: self.$showProfile, userEmail: self.$userEmail, userBirthday: self.$userBirthday)
+                        .environmentObject(PersonStore())
+                    
                 }
                 
             }
@@ -60,6 +64,6 @@ struct HeaderComponent: View {
 
 struct HeaderComponent_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderComponent(showProfile: .constant(false), value: .constant(1))
+        HeaderComponent(showProfile: .constant(false), value: .constant(1), userEmail: .constant(""), userBirthday: .constant(""))
     }
 }

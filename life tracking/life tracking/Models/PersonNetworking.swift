@@ -35,13 +35,25 @@ class PersonNetworking {
                 print("Error took place \(error)")
                 return
             }
-            
+                        
             guard let data = data else { return }
-            
-            let person = try! JSONDecoder().decode(Person.self, from: data)
-            DispatchQueue.main.async {
-                completion(person)
+            guard let response = response else { return }
+                        
+            print(data)
+            print(response)
+
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: [])
+                print(json)
+                
+                let person = try! JSONDecoder().decode(Person.self, from: data)
+                DispatchQueue.main.async {
+                    completion(person)
+                }
+            } catch {
+                print("JSON error: \(error.localizedDescription)")
             }
+
         }.resume()
         
     }

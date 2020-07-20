@@ -13,6 +13,9 @@ struct HomeBottomSheet: View {
     @Binding var bottomSheetShown: Bool
     let geometry: GeometryProxy
     
+    @Binding var user: Person
+    @Binding var covid: Covid
+    
     var body: some View {
         BottomSheetView(
             isOpen: self.$bottomSheetShown,
@@ -21,7 +24,7 @@ struct HomeBottomSheet: View {
             VStack(spacing: 20) {
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("Brasilia")
+                        Text(self.user.city)
                             .font(.title)
                             .fontWeight(.semibold)
                         HStack(spacing: 10) {
@@ -32,7 +35,7 @@ struct HomeBottomSheet: View {
 
                             HStack {
                                 Image(systemName: "mappin.and.ellipse")
-                                Text("Safe Zone")
+                                Text("\(self.user.district)")
                             }
                         }
                     }
@@ -46,9 +49,9 @@ struct HomeBottomSheet: View {
                             .animation(Animation.easeInOut.delay(0.3))
                         
                         VStack(alignment: .leading, spacing: 8) {
-                            Text("SwiftUI Prototype")
+                            Text("\(self.covid.date)")
                                 .fontWeight(.bold)
-                            Text("12 of 12 sections completed \n10 hours spent so far")
+                            Text("\(self.covid.lastAvailableConfirmedPer100KInhabitants)")
                                 .font(.footnote)
                                 .foregroundColor(.gray)
                                 .lineSpacing(4)

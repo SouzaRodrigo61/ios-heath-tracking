@@ -17,6 +17,7 @@ struct ContentView: View {
                 OnboardingView()
             } else if viewRouter.currentPage == "homeView" {
                 HomeView()
+                .environmentObject(PersonStore())
             }
         }
     }

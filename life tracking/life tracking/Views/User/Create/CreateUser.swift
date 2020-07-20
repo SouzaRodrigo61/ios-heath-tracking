@@ -17,6 +17,8 @@ struct CreateUser: View {
     @Binding var value: Int
     @Binding var showProfile: Bool
     
+    @Binding var user: Person
+    
     @ObservedObject var kGuardian = KeyboardGuardian(textFieldCount: 5)
     
     
@@ -99,7 +101,7 @@ struct CreateUser: View {
                             }
                             
                             
-                            ContinueButton(value: self.$value, showProfile: self.$showProfile, email: self.$email, name: self.$name, phone: self.$phone, genrer: self.$genrer, birthDate: self.$birthDate, isLoading: self.$isLoading, isSuccess: self.$isSuccess)
+                            ContinueButton(value: self.$value, showProfile: self.$showProfile, email: self.$email, name: self.$name, phone: self.$phone, genrer: self.$genrer, birthDate: self.$birthDate, isLoading: self.$isLoading, isSuccess: self.$isSuccess, user: self.$user)
                             
                             if self.value < 5 {
                                 if self.kGuardian.keyboardIsHidden  {
@@ -126,17 +128,14 @@ struct CreateUser: View {
             if isSuccess {
                 SuccessView()
             }
-            
         }
-        
-
     }
     
 }
 
 struct CreateUser_Previews: PreviewProvider {
     static var previews: some View {
-        CreateUser(value: .constant(1), showProfile: .constant(true))
+        CreateUser(value: .constant(1), showProfile: .constant(true), user: .constant(Person(city: "", countryCode: "", district: "", districtCode: "", gender: "", id: ID(birthday: "", email: ""), name: "", phone: "")) )
     }
 }
 

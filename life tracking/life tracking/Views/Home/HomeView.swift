@@ -13,20 +13,29 @@ import SwiftUI
 struct HomeView: View {
     
     @EnvironmentObject var store: PersonStore
+    @ObservedObject var covidStore: CovidStore = CovidStore()
     
-    @State var userEmail: String = ""
-    @State var userBirthday: String = ""
+    @State var user: Person = Person(city: "", countryCode: "", district: "", districtCode: "", gender: "", id: ID(birthday: "", email: ""), name: "", phone: "")
     @State private var bottomSheetShown = false
     @State var showProfile: Bool = false
-    
     @State var value = 1
-    
     @State var aparece = 0
-    
+    @State var covid: Covid = Covid(id: 0, epidemiologicalWeek: "", date: "", orderForPlace: "", state: "", city: "", cityIbgeCode: "", placeType: "", lastAvailableConfirmed: "", lastAvailableConfirmedPer100KInhabitants: "", newConfirmed: "", lastAvailableDeaths: "", newDeaths: "", lastAvailableDeathRate: "", estimatedPopulation2019: "", isLast: "", isRepeated: "")
     
     func onInit() {
-        userEmail = store.email
+        store.getPersonById() { (person) in
+            self.user = person
+            
+            self.covidStore.subLocality = self.user.districtCode
+            
+            self.covidStore.getCovidLocation() { (covid) in
+                print(covid)
+                self.covid = covid
+            }
+        }
     }
+    
+    
     
     var body: some View {
         VStack {
@@ -34,14 +43,13 @@ struct HomeView: View {
             GeometryReader { geometry in
                 
                 VStack(alignment: .center) {
-                    HeaderComponent(showProfile: self.$showProfile, value: self.$value, userEmail: self.$userEmail, userBirthday: self.$userBirthday)
+                    HeaderComponent(showProfile: self.$showProfile, value: self.$value, user: self.$user)
                         .padding(.bottom, 15)
                     
-                    Text("\(self.userEmail)")
                 }
                 
                 
-                HomeBottomSheet(bottomSheetShown: self.$bottomSheetShown, geometry: geometry)
+                HomeBottomSheet(bottomSheetShown: self.$bottomSheetShown, geometry: geometry, user: self.$user, covid: self.$covid)
             }
         }
         .onAppear(perform: onInit)
@@ -54,8 +62,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            HomeView()
-        }        
+        HomeView()
     }
 }

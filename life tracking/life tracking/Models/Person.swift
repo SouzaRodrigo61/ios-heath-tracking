@@ -12,7 +12,9 @@ import Combine
 // MARK: - Person
 struct Person: Codable, Equatable {
     var city: String
+    var countryCode: String
     var district: String
+    var districtCode: String
     var gender: String
     var id: ID
     var name: String
@@ -20,7 +22,9 @@ struct Person: Codable, Equatable {
 
     enum CodingKeys: String, CodingKey {
         case city = "city"
+        case countryCode = "countryCode"
         case district = "district"
+        case districtCode = "districtCode"
         case gender = "gender"
         case id = "id"
         case name = "name"

@@ -24,14 +24,15 @@ class PersonStore: ObservableObject {
         }
     }
         
+    func getPersonById(completion: @escaping (Person) -> ()) {
+        PersonNetworking().getPersonByID(email, birthday) { (person) in
+            completion(person)
+        }
+    }
         
-    func setPost(user: Person, completion: @escaping () -> ()) {
+    func setPerson(user: Person, completion: @escaping (Person) -> ()) {
         PersonNetworking().setPerson(user) { person in
-            self.email = person.id.email
-            self.birthday = person.id.birthday
-            
-//            print("Usuario cadastrado: \(person)")
-            completion()
+            completion(person)
         }
     }
 }

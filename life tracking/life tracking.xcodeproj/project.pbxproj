@@ -17,10 +17,14 @@
 		5B37B8CA24B6CEED00E3E619 /* KeyboardGuardian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B37B8C924B6CEED00E3E619 /* KeyboardGuardian.swift */; };
 		5B3DA15424A829590010A54D /* BlurRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA15324A829590010A54D /* BlurRepresentable.swift */; };
 		5B3DA15924A833FE0010A54D /* MapRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3DA15824A833FE0010A54D /* MapRepresentable.swift */; };
-		5B5415A524C1E3CF00C01816 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B5415A424C1E3CF00C01816 /* loading.json */; };
 		5B5415A724C1FC4B00C01816 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5415A624C1FC4B00C01816 /* Person.swift */; };
 		5B5415A924C2883F00C01816 /* PersonNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5415A824C2883F00C01816 /* PersonNetworking.swift */; };
 		5B62BE6624C4A8F700A7B416 /* JsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B62BE6524C4A8F700A7B416 /* JsonDecoder.swift */; };
+		5B62BE6A24C4D98000A7B416 /* Covid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B62BE6924C4D98000A7B416 /* Covid.swift */; };
+		5B62BE6C24C4DBDC00A7B416 /* CovidStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B62BE6B24C4DBDC00A7B416 /* CovidStore.swift */; };
+		5B62BE6E24C5063E00A7B416 /* CovidNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B62BE6D24C5063E00A7B416 /* CovidNetworking.swift */; };
+		5B62BE7124C515F600A7B416 /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B62BE6F24C515F600A7B416 /* success.json */; };
+		5B62BE7224C515F600A7B416 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B62BE7024C515F600A7B416 /* loading.json */; };
 		5B63EAD024B3E90300EB421A /* CreateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B63EACF24B3E90300EB421A /* CreateUser.swift */; };
 		5B63EAD224B3E98400EB421A /* SegmentedProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B63EAD124B3E98400EB421A /* SegmentedProgressView.swift */; };
 		5B65F68C24AE34F00049BA64 /* OnboardingOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B65F68B24AE34F00049BA64 /* OnboardingOne.swift */; };
@@ -31,7 +35,6 @@
 		5B6AAABD24C1E1A70044739D /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AAABB24C1E1A70044739D /* SuccessView.swift */; };
 		5B6AAABF24C1E1F50044739D /* LottieRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AAABE24C1E1F50044739D /* LottieRepresentable.swift */; };
 		5B6AAAC224C1E2730044739D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5B6AAAC124C1E2730044739D /* Lottie */; };
-		5B6AAAC424C1E3730044739D /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B6AAAC324C1E3730044739D /* success.json */; };
 		5B710BBA24B795DE001BDA8B /* PersonStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B710BB924B795DE001BDA8B /* PersonStore.swift */; };
 		5B710BBC24B822D1001BDA8B /* CreateUser+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B710BBB24B822D1001BDA8B /* CreateUser+Extension.swift */; };
 		5B8182F924C1112300E0CE4C /* AskAboutGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8182F824C1112300E0CE4C /* AskAboutGenre.swift */; };
@@ -85,10 +88,14 @@
 		5B37B8C924B6CEED00E3E619 /* KeyboardGuardian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGuardian.swift; sourceTree = "<group>"; };
 		5B3DA15324A829590010A54D /* BlurRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurRepresentable.swift; sourceTree = "<group>"; };
 		5B3DA15824A833FE0010A54D /* MapRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRepresentable.swift; sourceTree = "<group>"; };
-		5B5415A424C1E3CF00C01816 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = loading.json; path = ../../../../../../Downloads/DesignCode/DesignCode/Lottie/loading.json; sourceTree = "<group>"; };
 		5B5415A624C1FC4B00C01816 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		5B5415A824C2883F00C01816 /* PersonNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersonNetworking.swift; path = "life tracking/Models/PersonNetworking.swift"; sourceTree = SOURCE_ROOT; };
 		5B62BE6524C4A8F700A7B416 /* JsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonDecoder.swift; path = "life tracking/Data/JsonDecoder.swift"; sourceTree = SOURCE_ROOT; };
+		5B62BE6924C4D98000A7B416 /* Covid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid.swift; sourceTree = "<group>"; };
+		5B62BE6B24C4DBDC00A7B416 /* CovidStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidStore.swift; sourceTree = "<group>"; };
+		5B62BE6D24C5063E00A7B416 /* CovidNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CovidNetworking.swift; path = "life tracking/Store/CovidNetworking.swift"; sourceTree = SOURCE_ROOT; };
+		5B62BE6F24C515F600A7B416 /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
+		5B62BE7024C515F600A7B416 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		5B63EACF24B3E90300EB421A /* CreateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUser.swift; sourceTree = "<group>"; };
 		5B63EAD124B3E98400EB421A /* SegmentedProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedProgressView.swift; sourceTree = "<group>"; };
 		5B65F68B24AE34F00049BA64 /* OnboardingOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingOne.swift; sourceTree = "<group>"; };
@@ -98,7 +105,6 @@
 		5B6AAABA24C1E1A70044739D /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		5B6AAABB24C1E1A70044739D /* SuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		5B6AAABE24C1E1F50044739D /* LottieRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieRepresentable.swift; sourceTree = "<group>"; };
-		5B6AAAC324C1E3730044739D /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = success.json; path = ../../../../../../Downloads/DesignCode/DesignCode/Lottie/success.json; sourceTree = "<group>"; };
 		5B710BB924B795DE001BDA8B /* PersonStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonStore.swift; sourceTree = "<group>"; };
 		5B710BBB24B822D1001BDA8B /* CreateUser+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateUser+Extension.swift"; sourceTree = "<group>"; };
 		5B8182F824C1112300E0CE4C /* AskAboutGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskAboutGenre.swift; sourceTree = "<group>"; };
@@ -206,12 +212,28 @@
 			path = Representables;
 			sourceTree = "<group>";
 		};
-		5B63EACE24B3E8EF00EB421A /* User */ = {
+		5B62BE6724C4BBB800A7B416 /* Create */ = {
 			isa = PBXGroup;
 			children = (
 				5B81830224C115E500E0CE4C /* Components */,
 				5B63EACF24B3E90300EB421A /* CreateUser.swift */,
 				5B710BBB24B822D1001BDA8B /* CreateUser+Extension.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		5B62BE6824C4BBCA00A7B416 /* Show */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Show;
+			sourceTree = "<group>";
+		};
+		5B63EACE24B3E8EF00EB421A /* User */ = {
+			isa = PBXGroup;
+			children = (
+				5B62BE6824C4BBCA00A7B416 /* Show */,
+				5B62BE6724C4BBB800A7B416 /* Create */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -219,8 +241,8 @@
 		5B6AAAB424C1DD7E0044739D /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
-				5B5415A424C1E3CF00C01816 /* loading.json */,
-				5B6AAAC324C1E3730044739D /* success.json */,
+				5B62BE7024C515F600A7B416 /* loading.json */,
+				5B62BE6F24C515F600A7B416 /* success.json */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -343,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				5B710BB924B795DE001BDA8B /* PersonStore.swift */,
+				5B62BE6B24C4DBDC00A7B416 /* CovidStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -351,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				5B5415A824C2883F00C01816 /* PersonNetworking.swift */,
+				5B62BE6D24C5063E00A7B416 /* CovidNetworking.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -382,6 +406,7 @@
 			children = (
 				5B37B8C024B5FBB900E3E619 /* LastDays.swift */,
 				5B5415A624C1FC4B00C01816 /* Person.swift */,
+				5B62BE6924C4D98000A7B416 /* Covid.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -542,10 +567,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B968F6A24A053680020AB5D /* LaunchScreen.storyboard in Resources */,
-				5B6AAAC424C1E3730044739D /* success.json in Resources */,
+				5B62BE7124C515F600A7B416 /* success.json in Resources */,
 				5B968F6724A053680020AB5D /* Preview Assets.xcassets in Resources */,
 				5B968F6424A053680020AB5D /* Assets.xcassets in Resources */,
-				5B5415A524C1E3CF00C01816 /* loading.json in Resources */,
+				5B62BE7224C515F600A7B416 /* loading.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,7 +609,9 @@
 				5B6AAABD24C1E1A70044739D /* SuccessView.swift in Sources */,
 				5B37B8C824B69BE500E3E619 /* CustomTextField.swift in Sources */,
 				5BE16C6A24B0135400E7CEB7 /* ViewRouter.swift in Sources */,
+				5B62BE6E24C5063E00A7B416 /* CovidNetworking.swift in Sources */,
 				5B5415A724C1FC4B00C01816 /* Person.swift in Sources */,
+				5B62BE6A24C4D98000A7B416 /* Covid.swift in Sources */,
 				5B3DA15424A829590010A54D /* BlurRepresentable.swift in Sources */,
 				5B36726524B39DAC00FD3FCA /* HomeBottomSheet.swift in Sources */,
 				5B37B8C324B6534800E3E619 /* HeaderComponent.swift in Sources */,
@@ -598,6 +625,7 @@
 				5B968F9C24A0E8CC0020AB5D /* OnboardingView.swift in Sources */,
 				5B63EAD024B3E90300EB421A /* CreateUser.swift in Sources */,
 				5B36726024B25F0800FD3FCA /* RingView.swift in Sources */,
+				5B62BE6C24C4DBDC00A7B416 /* CovidStore.swift in Sources */,
 				5B65F69224AEC4040049BA64 /* RoundedCorners.swift in Sources */,
 				5B8182FF24C1159D00E0CE4C /* ImageHeaderView.swift in Sources */,
 				5B81830124C115CC00E0CE4C /* AdaptativeTextField.swift in Sources */,

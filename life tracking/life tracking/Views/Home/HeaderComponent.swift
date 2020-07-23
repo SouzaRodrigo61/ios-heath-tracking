@@ -66,8 +66,7 @@ struct HeaderComponent: View {
                     }
                 } else {
                     Button(action: {
-                        self.value = 1
-                        self.showProfile.toggle()
+                        print("clicou aqui")
                     }) {
                         Image(systemName: "person.crop.circle.badge.checkmark")
                             .font(.largeTitle)

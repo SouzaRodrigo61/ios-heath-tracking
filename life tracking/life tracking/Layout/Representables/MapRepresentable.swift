@@ -10,21 +10,72 @@ import SwiftUI
 import MapKit
 
 struct MapRepresentable: UIViewRepresentable {
+    class Coordinator: NSObject, MKMapViewDelegate {
+
+        @Binding var selectedPin: MapPin?
+
+        init(selectedPin: Binding<MapPin?>) {
+            _selectedPin = selectedPin
+        }
+
+        func mapView(_ mapView: MKMapView,
+                     didSelect view: MKAnnotationView) {
+            guard let pin = view.annotation as? MapPin else {
+                return
+            }
+            pin.action?()
+            guard case self.selectedPin = pin else { return }
+        }
+
+        func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+            guard (view.annotation as? MapPin) != nil else {
+                return
+            }
+            selectedPin = nil
+        }
+    }
+
+    @Binding var pins: [MapPin]
+    @Binding var selectedPin: MapPin?
+
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(selectedPin: $selectedPin)
+    }
+
     func makeUIView(context: Context) -> MKMapView {
-        MKMapView(frame: .zero)
+        let view = MKMapView(frame: .zero)
+        view.delegate = context.coordinator
+        return view
     }
 
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        let coordinate = CLLocationCoordinate2D(
-            latitude: 34.011286, longitude: -116.166868)
-        let span = MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0)
-        let region = MKCoordinateRegion(center: coordinate, span: span)
-        uiView.setRegion(region, animated: true)
+
+        uiView.showsUserLocation = true
+        uiView.removeAnnotations(uiView.annotations)
+        uiView.addAnnotations(pins)
+        if let selectedPin = selectedPin {
+            uiView.selectAnnotation(selectedPin, animated: false)
+        }
+
     }
 }
 
-struct MapRepresentable_Previews: PreviewProvider {
-    static var previews: some View {
-        MapRepresentable()
+
+class MapPin: NSObject, MKAnnotation {
+
+    let coordinate: CLLocationCoordinate2D
+    let title: String?
+    let subtitle: String?
+    let action: (() -> Void)?
+
+    init(coordinate: CLLocationCoordinate2D,
+         title: String? = nil,
+         subtitle: String? = nil,
+         action: (() -> Void)? = nil) {
+        self.coordinate = coordinate
+        self.title = title
+        self.subtitle = subtitle
+        self.action = action
     }
+
 }

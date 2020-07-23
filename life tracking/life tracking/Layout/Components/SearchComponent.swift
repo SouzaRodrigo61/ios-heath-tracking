@@ -8,33 +8,32 @@
 
 import SwiftUI
 
-struct SearchComponent: View {
-    @Binding var search: String
-    
+struct CustomView: View {
+
+    @Binding var percentage: Float // or some value binded
+
     var body: some View {
-        HStack {
-            Image(systemName: "person.crop.circle")
-                .foregroundColor(Color("search"))
-                .font(.system(size: 24, weight: .light))
-                .padding(.leading, 10)
-            
-            TextField("Procura", text: $search)
-                .font(.subheadline)
-                .foregroundColor(Color("search"))
-        }
-        .frame(width: 150, height: 44)
-        .background(
-            ZStack {
-                RoundedRectangle(cornerRadius: 12, style: .continuous)
+        GeometryReader { geometry in
+            // TODO: - there might be a need for horizontal and vertical alignments
+            ZStack(alignment: .leading) {
+                Rectangle()
+                    .foregroundColor(.gray)
+                Rectangle()
+                    .foregroundColor(.accentColor)
+                    .frame(width: geometry.size.width * CGFloat(self.percentage / 100))
             }
-        )
-            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .cornerRadius(12)
+            .gesture(DragGesture(minimumDistance: 0)
+                .onChanged({ value in
+                    // TODO: - maybe use other logic here
+                    self.percentage = min(max(0, Float(value.location.x / geometry.size.width * 100)), 100)
+                }))
+        }
     }
 }
 
-
-struct SearchComponent_Previews: PreviewProvider {
+struct TemperatureSliderDemo_Previews: PreviewProvider {
     static var previews: some View {
-        SearchComponent(search: .constant(""))
+        CustomView(percentage: .constant(7)).frame(height: 100)
     }
 }

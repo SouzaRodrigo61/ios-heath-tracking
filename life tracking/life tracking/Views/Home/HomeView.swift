@@ -56,7 +56,10 @@ struct HomeView: View {
                             .edgesIgnoringSafeArea(.top)
                     )
                     Spacer()
-                    HomeBottomSheet(bottomSheetShown: self.$bottomSheetShown, geometry: geometry, user: self.$user)
+                    
+                    if (self.user.name != "") {
+                        HomeBottomSheet(bottomSheetShown: self.$bottomSheetShown, geometry: geometry, user: self.$user)
+                    }
                 }
             }
             .onAppear(perform: onInit)

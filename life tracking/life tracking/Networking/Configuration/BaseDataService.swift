@@ -52,7 +52,7 @@ public class BaseDataService {
     func requestAPI(url: URL, completion: @escaping (Data?, Error?) -> Void) {
         var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
         request.setValue(url.host, forHTTPHeaderField: "referer")
-        request.setValue("en-us", forHTTPHeaderField: "accept-language")
+        request.setValue("pt-br", forHTTPHeaderField: "accept-language")
         _ = URLSession.shared.dataTask(with: request) { (data, response, _) in
             guard let response = response as? HTTPURLResponse,
                 response.statusCode == 200,

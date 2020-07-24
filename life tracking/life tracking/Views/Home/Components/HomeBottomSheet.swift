@@ -14,7 +14,6 @@ struct HomeBottomSheet: View {
     let geometry: GeometryProxy
     
     @Binding var user: Person
-    @Binding var covid: Covid
     
     var body: some View {
         BottomSheetView(
@@ -57,9 +56,9 @@ struct HomeBottomSheet: View {
                             .animation(Animation.easeInOut.delay(0.3))
                         
                         VStack(alignment: .leading, spacing: 8) {
-                            Text("\(self.covid.date)")
+                            Text("")
                                 .fontWeight(.bold)
-                            Text("\(self.covid.lastAvailableConfirmedPer100KInhabitants)")
+                            Text("")
                                 .font(.footnote)
                                 .foregroundColor(.gray)
                                 .lineSpacing(4)

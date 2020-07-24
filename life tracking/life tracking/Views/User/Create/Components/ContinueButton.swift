@@ -67,9 +67,6 @@ struct ContinueButton: View {
                                 let id: ID = ID(birthday: dateFormater.string(from: today), email: self.email)
                                 let person: Person = Person(city: (firstLocation?.locality!)!, countryCode: (firstLocation?.isoCountryCode!)!, district: (firstLocation?.subLocality!)!, districtCode: (firstLocation?.administrativeArea!)!, gender: gender, id: id, name: self.name, phone: self.phone)
                                 
-//                                print(person)
-                                
-                                
                                 // MARK: - Create person
                                 self.store.setPerson(user: person) { (person) in
                                     

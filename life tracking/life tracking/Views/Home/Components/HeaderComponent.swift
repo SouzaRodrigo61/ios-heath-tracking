@@ -10,15 +10,16 @@ import SwiftUI
 
 struct HeaderComponent: View {
     
-    @Binding var showProfile: Bool
-    @Binding var value: Int
     @Binding var user: Person
     
     @State var currentDate = Date()
+    @State var value = 1
+    @State var showProfile: Bool = false
     
     func format(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .full
+        dateFormatter.locale = Locale(identifier: "pt-br")
         return dateFormatter.string(from: date)
     }
     
@@ -39,9 +40,8 @@ struct HeaderComponent: View {
                 }
                 
                 
-                
                 Text(format(date: self.currentDate))
-                .foregroundColor(Color.secondary)
+                    .foregroundColor(Color.secondary)
 
             }
             .padding(.top, 10)
@@ -86,6 +86,6 @@ struct HeaderComponent: View {
 
 struct HeaderComponent_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderComponent(showProfile: .constant(false), value: .constant(1), user: .constant(Person(city: "", countryCode: "", district: "", districtCode: "", gender: "", id: ID(birthday: "", email: ""), name: "", phone: "")))
+        HeaderComponent(user: .constant(Person(city: "", countryCode: "", district: "", districtCode: "", gender: "", id: ID(birthday: "", email: ""), name: "", phone: "")))
     }
 }

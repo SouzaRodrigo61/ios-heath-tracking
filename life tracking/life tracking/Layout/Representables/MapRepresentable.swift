@@ -31,7 +31,6 @@ struct MapRepresentable: UIViewRepresentable {
             guard (view.annotation as? MapPin) != nil else {
                 return
             }
-            selectedPin = nil
         }
     }
 
@@ -54,7 +53,7 @@ struct MapRepresentable: UIViewRepresentable {
         uiView.removeAnnotations(uiView.annotations)
         uiView.addAnnotations(pins)
         if let selectedPin = selectedPin {
-            uiView.selectAnnotation(selectedPin, animated: false)
+            uiView.selectAnnotation(selectedPin, animated: true)
         }
 
     }

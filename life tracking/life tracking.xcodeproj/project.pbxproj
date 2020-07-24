@@ -45,6 +45,7 @@
 		5B8182FD24C1157D00E0CE4C /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8182FC24C1157D00E0CE4C /* ContinueButton.swift */; };
 		5B8182FF24C1159D00E0CE4C /* ImageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8182FE24C1159D00E0CE4C /* ImageHeaderView.swift */; };
 		5B81830124C115CC00E0CE4C /* AdaptativeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B81830024C115CC00E0CE4C /* AdaptativeTextField.swift */; };
+		5B8AAC7024CB522E00AACC32 /* HomeView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8AAC6F24CB522E00AACC32 /* HomeView+Extension.swift */; };
 		5B968F5E24A053620020AB5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B968F5D24A053620020AB5D /* AppDelegate.swift */; };
 		5B968F6024A053620020AB5D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B968F5F24A053620020AB5D /* SceneDelegate.swift */; };
 		5B968F6224A053620020AB5D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B968F6124A053620020AB5D /* ContentView.swift */; };
@@ -56,6 +57,9 @@
 		5B968F9624A0E1A70020AB5D /* ButtonCustomize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B968F9524A0E1A70020AB5D /* ButtonCustomize.swift */; };
 		5B968F9C24A0E8CC0020AB5D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B968F9B24A0E8CC0020AB5D /* OnboardingView.swift */; };
 		5B99106F24C13EAB00302834 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99106E24C13EAB00302834 /* LocationManager.swift */; };
+		5B99A91E24C9EDBB00987E07 /* PlaceLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A91D24C9EDBB00987E07 /* PlaceLocation.swift */; };
+		5B99A92124C9EE3500987E07 /* PlaceLocationAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A92024C9EE3500987E07 /* PlaceLocationAuth.swift */; };
+		5B99A92424C9F10200987E07 /* PlaceLocationNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A92324C9F10200987E07 /* PlaceLocationNetworking.swift */; };
 		5BB6D95924A826E0009F2744 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB6D95824A826E0009F2744 /* CardComponent.swift */; };
 		5BE16C6A24B0135400E7CEB7 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE16C6924B0135400E7CEB7 /* ViewRouter.swift */; };
 		5BE4FE0A24A0F89B001EB4D3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4FE0924A0F89B001EB4D3 /* HomeView.swift */; };
@@ -103,11 +107,11 @@
 		5B3DA15324A829590010A54D /* BlurRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurRepresentable.swift; sourceTree = "<group>"; };
 		5B3DA15824A833FE0010A54D /* MapRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRepresentable.swift; sourceTree = "<group>"; };
 		5B5415A624C1FC4B00C01816 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		5B5415A824C2883F00C01816 /* PersonNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersonNetworking.swift; path = "life tracking/Models/PersonNetworking.swift"; sourceTree = SOURCE_ROOT; };
+		5B5415A824C2883F00C01816 /* PersonNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PersonNetworking.swift; path = "life tracking/Networking/Person/PersonNetworking.swift"; sourceTree = SOURCE_ROOT; };
 		5B62BE6524C4A8F700A7B416 /* JsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonDecoder.swift; path = "life tracking/Data/JsonDecoder.swift"; sourceTree = SOURCE_ROOT; };
 		5B62BE6924C4D98000A7B416 /* Covid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid.swift; sourceTree = "<group>"; };
 		5B62BE6B24C4DBDC00A7B416 /* CovidStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidStore.swift; sourceTree = "<group>"; };
-		5B62BE6D24C5063E00A7B416 /* CovidNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CovidNetworking.swift; path = "life tracking/Store/CovidNetworking.swift"; sourceTree = SOURCE_ROOT; };
+		5B62BE6D24C5063E00A7B416 /* CovidNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CovidNetworking.swift; path = "life tracking/Networking/Batch Covid Brazil/CovidNetworking.swift"; sourceTree = SOURCE_ROOT; };
 		5B62BE6F24C515F600A7B416 /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		5B62BE7024C515F600A7B416 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		5B63EACF24B3E90300EB421A /* CreateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUser.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 		5B8182FC24C1157D00E0CE4C /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
 		5B8182FE24C1159D00E0CE4C /* ImageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHeaderView.swift; sourceTree = "<group>"; };
 		5B81830024C115CC00E0CE4C /* AdaptativeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptativeTextField.swift; sourceTree = "<group>"; };
+		5B8AAC6F24CB522E00AACC32 /* HomeView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView+Extension.swift"; sourceTree = "<group>"; };
 		5B968F5A24A053620020AB5D /* life tracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "life tracking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B968F5D24A053620020AB5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B968F5F24A053620020AB5D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +151,9 @@
 		5B968F9524A0E1A70020AB5D /* ButtonCustomize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustomize.swift; sourceTree = "<group>"; };
 		5B968F9B24A0E8CC0020AB5D /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		5B99106E24C13EAB00302834 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		5B99A91D24C9EDBB00987E07 /* PlaceLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLocation.swift; sourceTree = "<group>"; };
+		5B99A92024C9EE3500987E07 /* PlaceLocationAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLocationAuth.swift; sourceTree = "<group>"; };
+		5B99A92324C9F10200987E07 /* PlaceLocationNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLocationNetworking.swift; sourceTree = "<group>"; };
 		5BB6D95824A826E0009F2744 /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
 		5BE16C6924B0135400E7CEB7 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		5BE4FE0924A0F89B001EB4D3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -315,6 +323,23 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		5B8AAC7124CB525B00AACC32 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5B8AAC6F24CB522E00AACC32 /* HomeView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5B8AAC7224CB533000AACC32 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5B36726424B39DAC00FD3FCA /* HomeBottomSheet.swift */,
+				5B37B8C224B6534800E3E619 /* HeaderComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		5B968F5124A053620020AB5D = {
 			isa = PBXGroup;
 			children = (
@@ -422,10 +447,11 @@
 		5B968F9024A0E0A20020AB5D /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				5B99A92724C9F12E00987E07 /* Batch Covid Brazil */,
+				5B99A92624C9F11B00987E07 /* Bing Covid */,
+				5B99A92524C9F10F00987E07 /* Person */,
+				5B99A92224C9F0DE00987E07 /* Place Location */,
 				5BF8224D24C936F9005E6EF1 /* Configuration */,
-				5B5415A824C2883F00C01816 /* PersonNetworking.swift */,
-				5B62BE6D24C5063E00A7B416 /* CovidNetworking.swift */,
-				5BF8224E24C93745005E6EF1 /* BingDataService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -458,9 +484,10 @@
 		5B968F9324A0E0FE0020AB5D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5BF8224A24C936CA005E6EF1 /* Covid-Batch */,
+				5B99A91F24C9EDD100987E07 /* Place Location */,
+				5BF8224A24C936CA005E6EF1 /* Covid Batch */,
 				5BF8224924C936AE005E6EF1 /* Person */,
-				5BF8224824C93688005E6EF1 /* Covid-Tracking */,
+				5BF8224824C93688005E6EF1 /* Covid Tracking */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -483,6 +510,47 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		5B99A91F24C9EDD100987E07 /* Place Location */ = {
+			isa = PBXGroup;
+			children = (
+				5B99A91D24C9EDBB00987E07 /* PlaceLocation.swift */,
+				5B99A92024C9EE3500987E07 /* PlaceLocationAuth.swift */,
+			);
+			path = "Place Location";
+			sourceTree = "<group>";
+		};
+		5B99A92224C9F0DE00987E07 /* Place Location */ = {
+			isa = PBXGroup;
+			children = (
+				5B99A92324C9F10200987E07 /* PlaceLocationNetworking.swift */,
+			);
+			path = "Place Location";
+			sourceTree = "<group>";
+		};
+		5B99A92524C9F10F00987E07 /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				5B5415A824C2883F00C01816 /* PersonNetworking.swift */,
+			);
+			path = Person;
+			sourceTree = "<group>";
+		};
+		5B99A92624C9F11B00987E07 /* Bing Covid */ = {
+			isa = PBXGroup;
+			children = (
+				5BF8224E24C93745005E6EF1 /* BingDataService.swift */,
+			);
+			path = "Bing Covid";
+			sourceTree = "<group>";
+		};
+		5B99A92724C9F12E00987E07 /* Batch Covid Brazil */ = {
+			isa = PBXGroup;
+			children = (
+				5B62BE6D24C5063E00A7B416 /* CovidNetworking.swift */,
+			);
+			path = "Batch Covid Brazil";
+			sourceTree = "<group>";
+		};
 		5B9BE24124C33FA9009A30B9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,14 +571,14 @@
 		5BE4FE0824A0F884001EB4D3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				5B8AAC7224CB533000AACC32 /* Components */,
+				5B8AAC7124CB525B00AACC32 /* Extension */,
 				5BE4FE0924A0F89B001EB4D3 /* HomeView.swift */,
-				5B36726424B39DAC00FD3FCA /* HomeBottomSheet.swift */,
-				5B37B8C224B6534800E3E619 /* HeaderComponent.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
-		5BF8224824C93688005E6EF1 /* Covid-Tracking */ = {
+		5BF8224824C93688005E6EF1 /* Covid Tracking */ = {
 			isa = PBXGroup;
 			children = (
 				5BF8223624C9348C005E6EF1 /* Region.swift */,
@@ -520,7 +588,7 @@
 				5BF8223E24C93539005E6EF1 /* Change.swift */,
 				5BF8224224C935D0005E6EF1 /* Report.swift */,
 			);
-			path = "Covid-Tracking";
+			path = "Covid Tracking";
 			sourceTree = "<group>";
 		};
 		5BF8224924C936AE005E6EF1 /* Person */ = {
@@ -531,12 +599,12 @@
 			path = Person;
 			sourceTree = "<group>";
 		};
-		5BF8224A24C936CA005E6EF1 /* Covid-Batch */ = {
+		5BF8224A24C936CA005E6EF1 /* Covid Batch */ = {
 			isa = PBXGroup;
 			children = (
 				5B62BE6924C4D98000A7B416 /* Covid.swift */,
 			);
-			path = "Covid-Batch";
+			path = "Covid Batch";
 			sourceTree = "<group>";
 		};
 		5BF8224D24C936F9005E6EF1 /* Configuration */ = {
@@ -704,7 +772,9 @@
 				5BF8224F24C93745005E6EF1 /* BingDataService.swift in Sources */,
 				5B63EAD224B3E98400EB421A /* SegmentedProgressView.swift in Sources */,
 				5BE4FE0A24A0F89B001EB4D3 /* HomeView.swift in Sources */,
+				5B99A91E24C9EDBB00987E07 /* PlaceLocation.swift in Sources */,
 				5B6AAABD24C1E1A70044739D /* SuccessView.swift in Sources */,
+				5B99A92124C9EE3500987E07 /* PlaceLocationAuth.swift in Sources */,
 				5B37B8C824B69BE500E3E619 /* CustomTextField.swift in Sources */,
 				5B645FF924C5CC2500D40576 /* BarCharts.swift in Sources */,
 				5BE16C6A24B0135400E7CEB7 /* ViewRouter.swift in Sources */,
@@ -725,6 +795,7 @@
 				5B36726324B26A4E00FD3FCA /* BottomSheetView.swift in Sources */,
 				5B5415A924C2883F00C01816 /* PersonNetworking.swift in Sources */,
 				5B65F68C24AE34F00049BA64 /* OnboardingOne.swift in Sources */,
+				5B99A92424C9F10200987E07 /* PlaceLocationNetworking.swift in Sources */,
 				5BF8224324C935D0005E6EF1 /* Report.swift in Sources */,
 				5B968F9C24A0E8CC0020AB5D /* OnboardingView.swift in Sources */,
 				5B63EAD024B3E90300EB421A /* CreateUser.swift in Sources */,
@@ -734,6 +805,7 @@
 				5B65F69224AEC4040049BA64 /* RoundedCorners.swift in Sources */,
 				5BF8223D24C93506005E6EF1 /* Statistic.swift in Sources */,
 				5BF8224C24C936F6005E6EF1 /* BaseDataService.swift in Sources */,
+				5B8AAC7024CB522E00AACC32 /* HomeView+Extension.swift in Sources */,
 				5B8182FF24C1159D00E0CE4C /* ImageHeaderView.swift in Sources */,
 				5B81830124C115CC00E0CE4C /* AdaptativeTextField.swift in Sources */,
 				5BB6D95924A826E0009F2744 /* CardComponent.swift in Sources */,

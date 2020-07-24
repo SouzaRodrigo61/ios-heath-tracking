@@ -41,7 +41,6 @@ struct HomeView: View {
     // MARK: - Body
     var body: some View {
         ZStack {
-
             MapRepresentable(pins: self.$pins, selectedPin: self.$selectedPin)
                 .edgesIgnoringSafeArea(.all)
             VStack {

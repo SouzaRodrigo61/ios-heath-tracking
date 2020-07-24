@@ -16,28 +16,22 @@ extension HomeView {
                 return
             }
             
-            self.setCountry(regions: regions)
-            self.setProvince(regions: regions)
-        }
-    }
-    
-    func setCountry(regions: [Region]) {
-        for region in regions {
-            self.createMapPins(coordinate: region.location.clLocation, title: region.localizedLongName, subTitle: region.report!.stat.description, color: .orange)
-        }
-    }
-    
-    
-    func setProvince(regions: [Region]) {
-        for region in regions {
-            for subregion in region.subRegions {
-                self.createMapPins(coordinate: subregion.location.clLocation, title: subregion.localizedLongName, subTitle: subregion.report!.stat.description, color: .orange)
+            var p: [MapPin] = []
+            for region in regions {
+                let pin = self.createMapPins(coordinate: region.location.clLocation, title: region.localizedLongName, subTitle: region.report!.stat.description, color: .black)
+                p.append(pin)
+                for subregion in region.subRegions {
+                    let pinSub = self.createMapPins(coordinate: subregion.location.clLocation, title: subregion.localizedLongName, subTitle: subregion.report!.stat.description, color: .orange)
+                    p.append(pinSub)
+                }
             }
+            
+            self.pins = p
         }
     }
     
     
-    func createMapPins(coordinate: CLLocationCoordinate2D, title: String, subTitle: String, color: UIColor)  {
+    func createMapPins(coordinate: CLLocationCoordinate2D, title: String, subTitle: String, color: UIColor) -> MapPin  {
         let pin: MapPin = MapPin(
             coordinate: coordinate,
             title: title,
@@ -47,8 +41,8 @@ extension HomeView {
             },
             color: color
         )
-        
-        self.pins.append(pin)
+        return pin
+//        self.pins.append(pin)
     }
     
     func getUser() {

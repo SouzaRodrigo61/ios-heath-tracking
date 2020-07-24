@@ -37,7 +37,6 @@ struct MapRepresentable: UIViewRepresentable {
                 view.markerTintColor = annotation.color
                 view.glyphImage = UIImage(systemName: "waveform.path.ecg")
                 view.animatesWhenAdded = true
-                
             }
             return view
         }

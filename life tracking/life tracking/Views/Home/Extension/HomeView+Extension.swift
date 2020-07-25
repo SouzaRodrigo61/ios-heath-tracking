@@ -16,17 +16,11 @@ extension HomeView {
                 return
             }
             
-            var p: [MapPin] = []
             for region in regions {
-                let pin = self.createMapPins(coordinate: region.location.clLocation, title: region.localizedLongName, subTitle: region.report!.stat.description, color: .black)
-                p.append(pin)
-                for subregion in region.subRegions {
-                    let pinSub = self.createMapPins(coordinate: subregion.location.clLocation, title: subregion.localizedLongName, subTitle: subregion.report!.stat.description, color: .orange)
-                    p.append(pinSub)
-                }
+                let pin = self.createMapPins(coordinate: region.location.clLocation, title: region.localizedLongName, subTitle: region.report!.stat.description, color: .orange)
+                self.pins.append(pin)
             }
             
-            self.pins = p
         }
     }
     
@@ -42,7 +36,6 @@ extension HomeView {
             color: color
         )
         return pin
-//        self.pins.append(pin)
     }
     
     func getUser() {

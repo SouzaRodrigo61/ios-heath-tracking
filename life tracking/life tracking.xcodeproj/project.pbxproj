@@ -467,10 +467,10 @@
 		5B968F9024A0E0A20020AB5D /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				5B99A92524C9F10F00987E07 /* Person */,
 				5B77BA9D24CBE8B200CD9C85 /* Health */,
 				5B99A92724C9F12E00987E07 /* Batch Covid Brazil */,
 				5B99A92624C9F11B00987E07 /* Bing Covid */,
-				5B99A92524C9F10F00987E07 /* Person */,
 				5B99A92224C9F0DE00987E07 /* Place Location */,
 				5BF8224D24C936F9005E6EF1 /* Configuration */,
 			);

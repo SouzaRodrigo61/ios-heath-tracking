@@ -25,7 +25,6 @@ public class BaseDataService {
             dataURL = URL(string: dataURL.absoluteString + "&__rnd__=\(Int.random())")!
         }
 
-        print("Calling API")
         requestAPI(url: dataURL) { data, error in
             guard let data = data else {
                 completion(nil, error)
@@ -41,7 +40,6 @@ public class BaseDataService {
                     return
                 }
 
-                print("Download success")
                 self.lastDataHashes[dataURL] = dataHash
 
                 completion(data, nil)

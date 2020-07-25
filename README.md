@@ -5,6 +5,8 @@
 
 > This application aims to help people find cases of diseases close by for example COVID.
 
+🚧 **iOS Health Tracking is under development** 🚧
+
 ## Author
 
 👤 **Rodrigo Santos de Souza**

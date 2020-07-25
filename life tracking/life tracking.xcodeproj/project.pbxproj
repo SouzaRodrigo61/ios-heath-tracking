@@ -62,6 +62,8 @@
 		5B99A91E24C9EDBB00987E07 /* PlaceLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A91D24C9EDBB00987E07 /* PlaceLocation.swift */; };
 		5B99A92124C9EE3500987E07 /* PlaceLocationAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A92024C9EE3500987E07 /* PlaceLocationAuth.swift */; };
 		5B99A92424C9F10200987E07 /* PlaceLocationNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A92324C9F10200987E07 /* PlaceLocationNetworking.swift */; };
+		5BA8608D24CC89B70072334F /* HomeBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8608C24CC89B70072334F /* HomeBottomView.swift */; };
+		5BA8608F24CC89E90072334F /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8608E24CC89E90072334F /* HeaderView.swift */; };
 		5BB6D95924A826E0009F2744 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB6D95824A826E0009F2744 /* CardComponent.swift */; };
 		5BE16C6A24B0135400E7CEB7 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE16C6924B0135400E7CEB7 /* ViewRouter.swift */; };
 		5BE4FE0A24A0F89B001EB4D3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4FE0924A0F89B001EB4D3 /* HomeView.swift */; };
@@ -158,6 +160,8 @@
 		5B99A91D24C9EDBB00987E07 /* PlaceLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLocation.swift; sourceTree = "<group>"; };
 		5B99A92024C9EE3500987E07 /* PlaceLocationAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLocationAuth.swift; sourceTree = "<group>"; };
 		5B99A92324C9F10200987E07 /* PlaceLocationNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLocationNetworking.swift; sourceTree = "<group>"; };
+		5BA8608C24CC89B70072334F /* HomeBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomView.swift; sourceTree = "<group>"; };
+		5BA8608E24CC89E90072334F /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		5BB6D95824A826E0009F2744 /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
 		5BE16C6924B0135400E7CEB7 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		5BE4FE0924A0F89B001EB4D3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -590,9 +594,19 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		5BA8608B24CC89A50072334F /* Sub Views */ = {
+			isa = PBXGroup;
+			children = (
+				5BA8608C24CC89B70072334F /* HomeBottomView.swift */,
+				5BA8608E24CC89E90072334F /* HeaderView.swift */,
+			);
+			path = "Sub Views";
+			sourceTree = "<group>";
+		};
 		5BE4FE0824A0F884001EB4D3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				5BA8608B24CC89A50072334F /* Sub Views */,
 				5B8AAC7224CB533000AACC32 /* Components */,
 				5B8AAC7124CB525B00AACC32 /* Extension */,
 				5BE4FE0924A0F89B001EB4D3 /* HomeView.swift */,
@@ -795,9 +809,11 @@
 				5B63EAD224B3E98400EB421A /* SegmentedProgressView.swift in Sources */,
 				5BE4FE0A24A0F89B001EB4D3 /* HomeView.swift in Sources */,
 				5B99A91E24C9EDBB00987E07 /* PlaceLocation.swift in Sources */,
+				5BA8608F24CC89E90072334F /* HeaderView.swift in Sources */,
 				5B6AAABD24C1E1A70044739D /* SuccessView.swift in Sources */,
 				5B99A92124C9EE3500987E07 /* PlaceLocationAuth.swift in Sources */,
 				5B37B8C824B69BE500E3E619 /* CustomTextField.swift in Sources */,
+				5BA8608D24CC89B70072334F /* HomeBottomView.swift in Sources */,
 				5B645FF924C5CC2500D40576 /* BarCharts.swift in Sources */,
 				5BE16C6A24B0135400E7CEB7 /* ViewRouter.swift in Sources */,
 				5BF8224724C93628005E6EF1 /* ISO-Country.swift in Sources */,

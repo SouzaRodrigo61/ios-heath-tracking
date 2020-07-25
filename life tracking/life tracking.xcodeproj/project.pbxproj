@@ -40,6 +40,8 @@
 		5B710BBC24B822D1001BDA8B /* CreateUser+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B710BBB24B822D1001BDA8B /* CreateUser+Extension.swift */; };
 		5B77BA9824CBCDE700CD9C85 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B77BA9624CBCDE700CD9C85 /* loading.json */; };
 		5B77BA9924CBCDE700CD9C85 /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B77BA9724CBCDE700CD9C85 /* success.json */; };
+		5B77BA9C24CBE47700CD9C85 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B77BA9B24CBE47700CD9C85 /* Health.swift */; };
+		5B77BA9F24CBE8C600CD9C85 /* HealthNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B77BA9E24CBE8C600CD9C85 /* HealthNetworking.swift */; };
 		5B8182F924C1112300E0CE4C /* AskAboutGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8182F824C1112300E0CE4C /* AskAboutGenre.swift */; };
 		5B8182FB24C1154100E0CE4C /* AskAboutLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8182FA24C1154100E0CE4C /* AskAboutLocation.swift */; };
 		5B8182FD24C1157D00E0CE4C /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8182FC24C1157D00E0CE4C /* ContinueButton.swift */; };
@@ -128,6 +130,8 @@
 		5B710BBB24B822D1001BDA8B /* CreateUser+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateUser+Extension.swift"; sourceTree = "<group>"; };
 		5B77BA9624CBCDE700CD9C85 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		5B77BA9724CBCDE700CD9C85 /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
+		5B77BA9B24CBE47700CD9C85 /* Health.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
+		5B77BA9E24CBE8C600CD9C85 /* HealthNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthNetworking.swift; sourceTree = "<group>"; };
 		5B8182F824C1112300E0CE4C /* AskAboutGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskAboutGenre.swift; sourceTree = "<group>"; };
 		5B8182FA24C1154100E0CE4C /* AskAboutLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskAboutLocation.swift; sourceTree = "<group>"; };
 		5B8182FC24C1157D00E0CE4C /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
@@ -311,6 +315,22 @@
 			path = Lottie;
 			sourceTree = "<group>";
 		};
+		5B77BA9A24CBE46500CD9C85 /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				5B77BA9B24CBE47700CD9C85 /* Health.swift */,
+			);
+			path = Health;
+			sourceTree = "<group>";
+		};
+		5B77BA9D24CBE8B200CD9C85 /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				5B77BA9E24CBE8C600CD9C85 /* HealthNetworking.swift */,
+			);
+			path = Health;
+			sourceTree = "<group>";
+		};
 		5B81830224C115E500E0CE4C /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -447,6 +467,7 @@
 		5B968F9024A0E0A20020AB5D /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				5B77BA9D24CBE8B200CD9C85 /* Health */,
 				5B99A92724C9F12E00987E07 /* Batch Covid Brazil */,
 				5B99A92624C9F11B00987E07 /* Bing Covid */,
 				5B99A92524C9F10F00987E07 /* Person */,
@@ -484,6 +505,7 @@
 		5B968F9324A0E0FE0020AB5D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5B77BA9A24CBE46500CD9C85 /* Health */,
 				5B99A91F24C9EDD100987E07 /* Place Location */,
 				5BF8224A24C936CA005E6EF1 /* Covid Batch */,
 				5BF8224924C936AE005E6EF1 /* Person */,
@@ -805,6 +827,7 @@
 				5B65F69224AEC4040049BA64 /* RoundedCorners.swift in Sources */,
 				5BF8223D24C93506005E6EF1 /* Statistic.swift in Sources */,
 				5BF8224C24C936F6005E6EF1 /* BaseDataService.swift in Sources */,
+				5B77BA9C24CBE47700CD9C85 /* Health.swift in Sources */,
 				5B8AAC7024CB522E00AACC32 /* HomeView+Extension.swift in Sources */,
 				5B8182FF24C1159D00E0CE4C /* ImageHeaderView.swift in Sources */,
 				5B81830124C115CC00E0CE4C /* AdaptativeTextField.swift in Sources */,
@@ -816,6 +839,7 @@
 				5B968F9624A0E1A70020AB5D /* ButtonCustomize.swift in Sources */,
 				5B62BE6624C4A8F700A7B416 /* JsonDecoder.swift in Sources */,
 				5BE4FE0C24A14DAB001EB4D3 /* SearchComponent.swift in Sources */,
+				5B77BA9F24CBE8C600CD9C85 /* HealthNetworking.swift in Sources */,
 				5B65F68E24AEA4DA0049BA64 /* OnboardingTwo.swift in Sources */,
 				5B8182FD24C1157D00E0CE4C /* ContinueButton.swift in Sources */,
 			);

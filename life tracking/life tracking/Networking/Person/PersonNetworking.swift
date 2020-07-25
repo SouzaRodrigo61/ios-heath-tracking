@@ -10,6 +10,8 @@ import SwiftUI
 
 class PersonNetworking {
     
+    static let shared = PersonNetworking()
+    
     func getPersonByID(_ email: String, _ birthday: String, completion: @escaping (Person) -> ()) {
         let url = URL(string: "https://backend-health-tracking.herokuapp.com/person/\(email)/\(birthday)")!
         
@@ -39,7 +41,6 @@ class PersonNetworking {
         }
         .resume()
     }
-    
     
     func setPerson(_ user: Person, completion: @escaping (Person) -> ()) {
         let url = URL(string: "https://backend-health-tracking.herokuapp.com/person")

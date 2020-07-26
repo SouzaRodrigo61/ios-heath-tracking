@@ -26,10 +26,10 @@ struct HomeView: View {
     @State var pins: [MapPin] = []
     @State var selectedPin: MapPin?
     
-    
     /// States - Boolean
     @State private var bottomSheetShown = false
     @State private var isLogin: Bool = false
+    @State var showingAlert: Bool = false
     
     
     /// States - String
@@ -46,12 +46,16 @@ struct HomeView: View {
     // MARK: - Body
     var body: some View {
         ZStack(alignment: .center) {
-            MapRepresentable(pins: self.$pins, selectedPin: self.$selectedPin)
-                .edgesIgnoringSafeArea(.all)
+            MapRepresentable(pins: self.$pins, selectedPin: self.$selectedPin, showingAlert: self.$showingAlert)
+                .alert(isPresented: $showingAlert) { () -> Alert in
+                    print("SHOWING ALERT BODY: --> \($showingAlert.wrappedValue)")
+                    return Alert(title: Text("Important message"), message: Text("Go out and have a girlfriend!"), dismissButton: .default(Text("Got it!")))
+            }
+            .edgesIgnoringSafeArea(.all)
             
             
             if self.isLogin {
-
+                
                 GeometryReader { bounds in
                     VStack {
                         
@@ -63,7 +67,7 @@ struct HomeView: View {
                         BlurRepresentable(style: .dark)
                             .edgesIgnoringSafeArea(.all)
                     )
-
+                    
                 }
             } else {
                 VStack(alignment: .center) {
@@ -73,7 +77,7 @@ struct HomeView: View {
                         HeaderView(user: self.$user, state: self.$state)
                         
                         Spacer()
-                                            
+                        
                         /// - Home Bottom
                         HomeBottomView(user: self.$user, isLogin: self.$isLogin, geometry: geometry)
                         
@@ -82,7 +86,7 @@ struct HomeView: View {
                 .onAppear(perform: onInit)
             }
             
-
+            
         }
     }
 }

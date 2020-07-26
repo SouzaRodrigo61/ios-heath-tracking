@@ -10,6 +10,9 @@ import SwiftUI
 
 // MARK: - Header View
 struct HeaderView: View {
+    
+    @ObservedObject var cityStore = CityStore()
+    
     @Binding var user: Person
     @Binding var state: String
     
@@ -36,7 +39,7 @@ struct HeaderView: View {
                     HStack {
                         Image(systemName: "location.fill")
                             .foregroundColor(Color.secondary)
-                        TextField("Seleciona o estado", text: self.$state)
+                        TextField("Seleciona o estado", text: self.$cityStore.cityNamed)
                             .padding(.leading, 5)
                     }
                     .padding()

@@ -26,8 +26,6 @@
 		5B63EAD224B3E98400EB421A /* SegmentedProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B63EAD124B3E98400EB421A /* SegmentedProgressView.swift */; };
 		5B645FF924C5CC2500D40576 /* BarCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B645FF824C5CC2500D40576 /* BarCharts.swift */; };
 		5B645FFD24C5F68300D40576 /* brazilHigh.svg in Resources */ = {isa = PBXBuildFile; fileRef = 5B645FFC24C5F68300D40576 /* brazilHigh.svg */; };
-		5B64600224C5F85A00D40576 /* SVGRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B64600124C5F85A00D40576 /* SVGRepresentable.swift */; };
-		5B64600524C6031E00D40576 /* Macaw in Frameworks */ = {isa = PBXBuildFile; productRef = 5B64600424C6031E00D40576 /* Macaw */; };
 		5B65F68C24AE34F00049BA64 /* OnboardingOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B65F68B24AE34F00049BA64 /* OnboardingOne.swift */; };
 		5B65F68E24AEA4DA0049BA64 /* OnboardingTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B65F68D24AEA4DA0049BA64 /* OnboardingTwo.swift */; };
 		5B65F69024AEA62B0049BA64 /* OnboardingThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B65F68F24AEA62B0049BA64 /* OnboardingThree.swift */; };
@@ -64,6 +62,9 @@
 		5B99A92424C9F10200987E07 /* PlaceLocationNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B99A92324C9F10200987E07 /* PlaceLocationNetworking.swift */; };
 		5BA8608D24CC89B70072334F /* HomeBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8608C24CC89B70072334F /* HomeBottomView.swift */; };
 		5BA8608F24CC89E90072334F /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8608E24CC89E90072334F /* HeaderView.swift */; };
+		5BA8609B24CCFB830072334F /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8609A24CCFB830072334F /* City.swift */; };
+		5BA8609E24CCFBFF0072334F /* CitiesNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8609D24CCFBFF0072334F /* CitiesNetworking.swift */; };
+		5BA860A024CCFD090072334F /* CityStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8609F24CCFD090072334F /* CityStore.swift */; };
 		5BB6D95924A826E0009F2744 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB6D95824A826E0009F2744 /* CardComponent.swift */; };
 		5BE16C6A24B0135400E7CEB7 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE16C6924B0135400E7CEB7 /* ViewRouter.swift */; };
 		5BE4FE0A24A0F89B001EB4D3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4FE0924A0F89B001EB4D3 /* HomeView.swift */; };
@@ -120,7 +121,6 @@
 		5B63EAD124B3E98400EB421A /* SegmentedProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedProgressView.swift; sourceTree = "<group>"; };
 		5B645FF824C5CC2500D40576 /* BarCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BarCharts.swift; path = "life tracking/Store/BarCharts.swift"; sourceTree = SOURCE_ROOT; };
 		5B645FFC24C5F68300D40576 /* brazilHigh.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = brazilHigh.svg; sourceTree = "<group>"; };
-		5B64600124C5F85A00D40576 /* SVGRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGRepresentable.swift; sourceTree = "<group>"; };
 		5B65F68B24AE34F00049BA64 /* OnboardingOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingOne.swift; sourceTree = "<group>"; };
 		5B65F68D24AEA4DA0049BA64 /* OnboardingTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTwo.swift; sourceTree = "<group>"; };
 		5B65F68F24AEA62B0049BA64 /* OnboardingThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingThree.swift; sourceTree = "<group>"; };
@@ -162,6 +162,9 @@
 		5B99A92324C9F10200987E07 /* PlaceLocationNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceLocationNetworking.swift; sourceTree = "<group>"; };
 		5BA8608C24CC89B70072334F /* HomeBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomView.swift; sourceTree = "<group>"; };
 		5BA8608E24CC89E90072334F /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		5BA8609A24CCFB830072334F /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		5BA8609D24CCFBFF0072334F /* CitiesNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesNetworking.swift; sourceTree = "<group>"; };
+		5BA8609F24CCFD090072334F /* CityStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityStore.swift; sourceTree = "<group>"; };
 		5BB6D95824A826E0009F2744 /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
 		5BE16C6924B0135400E7CEB7 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		5BE4FE0924A0F89B001EB4D3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -186,7 +189,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B64600524C6031E00D40576 /* Macaw in Frameworks */,
 				5B6AAAC224C1E2730044739D /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,7 +253,6 @@
 		5B3DA15224A829390010A54D /* Representables */ = {
 			isa = PBXGroup;
 			children = (
-				5B64600124C5F85A00D40576 /* SVGRepresentable.swift */,
 				5B6AAABE24C1E1F50044739D /* LottieRepresentable.swift */,
 				5B3DA15324A829590010A54D /* BlurRepresentable.swift */,
 				5B3DA15824A833FE0010A54D /* MapRepresentable.swift */,
@@ -464,6 +465,7 @@
 			children = (
 				5B710BB924B795DE001BDA8B /* PersonStore.swift */,
 				5B62BE6B24C4DBDC00A7B416 /* CovidStore.swift */,
+				5BA8609F24CCFD090072334F /* CityStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -471,6 +473,7 @@
 		5B968F9024A0E0A20020AB5D /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				5BA8609C24CCFBDC0072334F /* Cities */,
 				5B99A92524C9F10F00987E07 /* Person */,
 				5B77BA9D24CBE8B200CD9C85 /* Health */,
 				5B99A92724C9F12E00987E07 /* Batch Covid Brazil */,
@@ -509,6 +512,7 @@
 		5B968F9324A0E0FE0020AB5D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5BA8609924CCFB6B0072334F /* Cities */,
 				5B77BA9A24CBE46500CD9C85 /* Health */,
 				5B99A91F24C9EDD100987E07 /* Place Location */,
 				5BF8224A24C936CA005E6EF1 /* Covid Batch */,
@@ -603,6 +607,22 @@
 			path = "Sub Views";
 			sourceTree = "<group>";
 		};
+		5BA8609924CCFB6B0072334F /* Cities */ = {
+			isa = PBXGroup;
+			children = (
+				5BA8609A24CCFB830072334F /* City.swift */,
+			);
+			path = Cities;
+			sourceTree = "<group>";
+		};
+		5BA8609C24CCFBDC0072334F /* Cities */ = {
+			isa = PBXGroup;
+			children = (
+				5BA8609D24CCFBFF0072334F /* CitiesNetworking.swift */,
+			);
+			path = Cities;
+			sourceTree = "<group>";
+		};
 		5BE4FE0824A0F884001EB4D3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -670,7 +690,6 @@
 			name = "life tracking";
 			packageProductDependencies = (
 				5B6AAAC124C1E2730044739D /* Lottie */,
-				5B64600424C6031E00D40576 /* Macaw */,
 			);
 			productName = "life tracking";
 			productReference = 5B968F5A24A053620020AB5D /* life tracking.app */;
@@ -746,7 +765,6 @@
 			mainGroup = 5B968F5124A053620020AB5D;
 			packageReferences = (
 				5B6AAAC024C1E2730044739D /* XCRemoteSwiftPackageReference "lottie-ios" */,
-				5B64600324C6031E00D40576 /* XCRemoteSwiftPackageReference "Macaw" */,
 			);
 			productRefGroup = 5B968F5B24A053620020AB5D /* Products */;
 			projectDirPath = "";
@@ -801,6 +819,7 @@
 				5BF8223724C9348C005E6EF1 /* Region.swift in Sources */,
 				5BE4FE0E24A14DE6001EB4D3 /* AvatarComponent.swift in Sources */,
 				5B3DA15924A833FE0010A54D /* MapRepresentable.swift in Sources */,
+				5BA8609E24CCFBFF0072334F /* CitiesNetworking.swift in Sources */,
 				5BF8223524C9347B005E6EF1 /* DataService.swift in Sources */,
 				5B968F6224A053620020AB5D /* ContentView.swift in Sources */,
 				5B65F69024AEA62B0049BA64 /* OnboardingThree.swift in Sources */,
@@ -821,7 +840,6 @@
 				5B5415A724C1FC4B00C01816 /* Person.swift in Sources */,
 				5B62BE6A24C4D98000A7B416 /* Covid.swift in Sources */,
 				5B3DA15424A829590010A54D /* BlurRepresentable.swift in Sources */,
-				5B64600224C5F85A00D40576 /* SVGRepresentable.swift in Sources */,
 				5B36726524B39DAC00FD3FCA /* HomeBottomSheet.swift in Sources */,
 				5BF8223B24C934E6005E6EF1 /* TimeSeries.swift in Sources */,
 				5B37B8C324B6534800E3E619 /* HeaderComponent.swift in Sources */,
@@ -852,11 +870,13 @@
 				5B8182F924C1112300E0CE4C /* AskAboutGenre.swift in Sources */,
 				5B8182FB24C1154100E0CE4C /* AskAboutLocation.swift in Sources */,
 				5BF8224124C93594005E6EF1 /* Strings.swift in Sources */,
+				5BA860A024CCFD090072334F /* CityStore.swift in Sources */,
 				5B968F9624A0E1A70020AB5D /* ButtonCustomize.swift in Sources */,
 				5B62BE6624C4A8F700A7B416 /* JsonDecoder.swift in Sources */,
 				5BE4FE0C24A14DAB001EB4D3 /* SearchComponent.swift in Sources */,
 				5B77BA9F24CBE8C600CD9C85 /* HealthNetworking.swift in Sources */,
 				5B65F68E24AEA4DA0049BA64 /* OnboardingTwo.swift in Sources */,
+				5BA8609B24CCFB830072334F /* City.swift in Sources */,
 				5B8182FD24C1157D00E0CE4C /* ContinueButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1184,14 +1204,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5B64600324C6031E00D40576 /* XCRemoteSwiftPackageReference "Macaw" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/exyte/Macaw.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		5B6AAAC024C1E2730044739D /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
@@ -1203,11 +1215,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5B64600424C6031E00D40576 /* Macaw */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5B64600324C6031E00D40576 /* XCRemoteSwiftPackageReference "Macaw" */;
-			productName = Macaw;
-		};
 		5B6AAAC124C1E2730044739D /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5B6AAAC024C1E2730044739D /* XCRemoteSwiftPackageReference "lottie-ios" */;

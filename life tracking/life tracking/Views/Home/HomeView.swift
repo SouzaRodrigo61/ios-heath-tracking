@@ -26,13 +26,14 @@ struct HomeView: View {
     @State var pins: [MapPin] = []
     @State var selectedPin: MapPin?
     
-    
     /// States - Boolean
     @State private var bottomSheetShown = false
+    @State private var isLogin: Bool = false
+    @State var showingAlert: Bool = false
     
     
     /// States - String
-    @State var state: String = ""
+    @State private var state: String = ""
     
     
     /// Initializer
@@ -45,22 +46,47 @@ struct HomeView: View {
     // MARK: - Body
     var body: some View {
         ZStack(alignment: .center) {
-            MapRepresentable(pins: self.$pins, selectedPin: self.$selectedPin)
-                .edgesIgnoringSafeArea(.all)
-            VStack(alignment: .center) {
-                GeometryReader { geometry in
-                    
-                    /// - Home Header
-                    HeaderView(user: self.$user, state: self.$state)
-                    
-                    Spacer()
-                    
-                    /// - Home Bottom
-                    HomeBottomView(user: self.$user, geometry: geometry)
+            MapRepresentable(pins: self.$pins, selectedPin: self.$selectedPin, showingAlert: self.$showingAlert)
+                .alert(isPresented: $showingAlert) { () -> Alert in
+                    print("SHOWING ALERT BODY: --> \($showingAlert.wrappedValue)")
+                    return Alert(title: Text("Important message"), message: Text("Go out and have a girlfriend!"), dismissButton: .default(Text("Got it!")))
+            }
+            .edgesIgnoringSafeArea(.all)
+            
+            
+            if self.isLogin {
+                
+                GeometryReader { bounds in
+                    VStack {
+                        
+                        Text("Login base")
+                        Spacer()
+                    }
+                    .frame(width: bounds.size.width, height: bounds.size.height)
+                    .background(
+                        BlurRepresentable(style: .dark)
+                            .edgesIgnoringSafeArea(.all)
+                    )
                     
                 }
+            } else {
+                VStack(alignment: .center) {
+                    GeometryReader { geometry in
+                        
+                        /// - Home Header
+                        HeaderView(user: self.$user, state: self.$state)
+                        
+                        Spacer()
+                        
+                        /// - Home Bottom
+                        HomeBottomView(user: self.$user, isLogin: self.$isLogin, geometry: geometry)
+                        
+                    }
+                }
+                .onAppear(perform: onInit)
             }
-            .onAppear(perform: onInit)
+            
+            
         }
     }
 }

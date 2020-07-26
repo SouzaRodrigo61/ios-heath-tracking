@@ -10,9 +10,11 @@ import SwiftUI
 
 // MARK: - Bottom View
 struct HomeBottomView: View {
-    
-    /// States - Person
+    /// Binding - Person
     @Binding var user: Person
+    
+    /// Binding - Person
+    @Binding var isLogin: Bool
     
     /// States - Boolean
     @State private var bottomSheetShown = false
@@ -28,16 +30,13 @@ struct HomeBottomView: View {
             } else {
                 HStack() {
                     Spacer()
-                    Button(action: {}) {
+                    Button(action: { self.isLogin.toggle() }) {
                         VStack {
                             HStack {
                                 Image(systemName: "person.crop.circle.badge.exclam")
                                 Text("Você voltou ?")
                             }
                             .padding()
-                        }
-                        .onTapGesture {
-                            print("on tap")
                         }
                         .background(
                             BlurRepresentable(style: .regular)

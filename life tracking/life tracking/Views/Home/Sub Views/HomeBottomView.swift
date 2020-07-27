@@ -31,26 +31,67 @@ struct HomeBottomView: View {
         VStack {
             if isSelectCountry {
                 
-                BottomSheetView(isOpen: self.$isSelectCountry, maxHeight: 450) {
+                BottomSheetView(isOpen: self.$isSelectCountry, maxHeight: self.country!.subRegions.count > 0 ? 450: 200) {
 
                     VStack(alignment: .leading) {
-                        Text("\(self.country?.localizedLongName ?? "")")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .padding(.horizontal, 20)
                         
-                        ScrollView {
-                            ForEach(self.country!.subRegions.indices) { index in
-                                VStack {
-                                    Text("\(self.country!.subRegions[index].localizedLongName)")
-                                    Text("\(self.country!.subRegions[index].report?.stat.description ?? "")")
-                                }
-                                .frame(width: UIScreen.main.bounds.size.width)
-                                .padding(.vertical, 10)
-                                .padding(.horizontal, 20)
+                        /// Header sobre o pais - covid
+                        VStack(alignment: .leading) {
+                            Text("\(self.country?.localizedLongName ?? "")")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                                        
+                            HStack {
+                                Text("Confirmados: ")
+                                Text("\(self.country?.report?.stat.confirmedCountString ?? "")")
                             }
                         }
-                        .frame(width: UIScreen.main.bounds.size.width)
+                        .padding(.horizontal, 20)
+                        
+                        /// Informações sobre covid
+                        HStack(alignment: .center) {
+                            
+                            VStack {
+                                Text("Casos Ativos")
+                                Text("\(self.country?.report?.stat.activeCountString ?? "")")
+                                Text("\(self.country?.report?.stat.activePercentString ?? "")")
+                            }
+                            
+                            Spacer()
+                            
+                            VStack {
+                                Text("Recuperados")
+                                Text("\(self.country?.report?.stat.recoveredCountString ?? "")")
+                                Text("\(self.country?.report?.stat.recoveredPercentString ?? "")")
+                            }
+                            
+                            Spacer()
+                            
+                            VStack {
+                                Text("Mortos")
+                                Text("\(self.country?.report?.stat.deathCountString ?? "")")
+                                Text("\(self.country?.report?.stat.deathPercentString ?? "")")
+                            }
+                            
+                        }
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 20)
+                        
+                        /// Mostrar os estados do pais
+                        if self.country!.subRegions.count > 0 {
+                            ScrollView {
+                                ForEach(self.country!.subRegions.indices) { index in
+                                    VStack {
+                                        Text("\(self.country!.subRegions[index].localizedLongName)")
+                                        Text("\(self.country!.subRegions[index].report?.stat.description ?? "")")
+                                    }
+                                    .frame(width: UIScreen.main.bounds.size.width)
+                                    .padding(.vertical, 10)
+                                    .padding(.horizontal, 20)
+                                }
+                            }
+                            .frame(width: UIScreen.main.bounds.size.width)
+                        }
                     }
                     .padding(.bottom, 20)
                 }

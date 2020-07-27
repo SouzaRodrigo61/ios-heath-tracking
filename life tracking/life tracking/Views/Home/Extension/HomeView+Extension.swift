@@ -17,7 +17,7 @@ extension HomeView {
             }
             
             for region in regions {
-                let pin = self.createMapPins(coordinate: region.location.clLocation, title: region.localizedLongName, subTitle: region.report!.stat.description, color: .orange)
+                let pin = self.createMapPins(coordinate: region.location.clLocation, title: region.localizedLongName, subTitle: region.report!.stat.description, color: .orange, country: region)
                 self.pins.append(pin)
             }
             
@@ -25,7 +25,7 @@ extension HomeView {
     }
     
     
-    func createMapPins(coordinate: CLLocationCoordinate2D, title: String, subTitle: String, color: UIColor) -> MapPin  {
+    func createMapPins(coordinate: CLLocationCoordinate2D, title: String, subTitle: String, color: UIColor, country: Region) -> MapPin  {
         let pin: MapPin = MapPin(
             coordinate: coordinate,
             title: title,
@@ -33,7 +33,8 @@ extension HomeView {
             action: {
                 print("Casos: \(title) - \(subTitle)")
             },
-            color: color
+            color: color,
+            country: country
         )
         return pin
     }

@@ -22,7 +22,7 @@ public class Region: Codable {
     public lazy var dailyChange: Change? = { generateDailyChange() }()
 
     public var subRegions: [Region] = []
-
+    
     init(level: Level, name: String, parentName: String?, location: Coordinate) {
         self.level = level
         self.name = name

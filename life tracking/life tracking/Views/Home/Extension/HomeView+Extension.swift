@@ -17,7 +17,7 @@ extension HomeView {
             }
             
             for region in regions {
-                let pin = self.createMapPins(coordinate: region.location.clLocation, title: region.localizedLongName, subTitle: region.report!.stat.description, color: .orange, country: region)
+                let pin = self.createMapPins(coordinate: region.location.clLocation, title: region.localizedLongName, subTitle: region.report?.stat.shortDescription ?? "", color: .orange, country: region)
                 self.pins.append(pin)
             }
             

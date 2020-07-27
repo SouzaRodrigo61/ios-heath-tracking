@@ -74,6 +74,11 @@ extension Statistic: CustomStringConvertible {
     public var description: String {
         "Estatistica: \(confirmedCountString) | \(recoveredCountString) | \(deathCountString)"
     }
+    
+        public var shortDescription: String {
+            "Casos recuperados: \(recoveredCountString) "
+    //        | \(deathCountString)"
+        }
 }
 
 extension Statistic {

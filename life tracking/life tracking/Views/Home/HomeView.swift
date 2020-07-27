@@ -50,45 +50,48 @@ struct HomeView: View {
             MapRepresentable(pins: self.$pins, selectedPin: self.$selectedPin, showingAlert: self.$isSelectCountry, country: self.$country)
                 .edgesIgnoringSafeArea(.all)
             
-            
-            ///
-            /// Change layout
-            ///  - Show Login Page
-            if self.isLogin {
-                
-                GeometryReader { bounds in
-                    VStack {
-                        
-                        Text("Login base")
-                        Spacer()
-                    }
-                    .frame(width: bounds.size.width, height: bounds.size.height)
-                    .background(
-                        BlurRepresentable(style: .dark)
-                            .edgesIgnoringSafeArea(.all)
-                    )
-                    
-                }
-            } else {
-                
-
+            GeometryReader { sizes in
                 ///
                 /// Change layout
-                ///  - Show Default Layout
-                VStack(alignment: .center) {
-                    GeometryReader { geometry in
-                        
-                        /// - Home Header
-                        HeaderView(user: self.$user, state: self.$state)
-                        
-                        Spacer()
-                        
-                        /// - Home Bottom
-                        HomeBottomView(user: self.$user, country: self.$country, isLogin: self.$isLogin, isSelectCountry: self.$isSelectCountry, geometry: geometry)
+                ///  - Show Login Page
+                if self.isLogin {
+                    
+                    GeometryReader { bounds in
+                        VStack {
+                            
+                            Text("Login base")
+                            Spacer()
+                        }
+                        .frame(width: bounds.size.width, height: bounds.size.height)
+                        .background(
+                            BlurRepresentable(style: .dark)
+                                .edgesIgnoringSafeArea(.all)
+                        )
                         
                     }
+                } else {
+                    
+
+                    ///
+                    /// Change layout
+                    ///  - Show Default Layout
+                    VStack(alignment: .center) {
+                        GeometryReader { geometry in
+                            
+                            /// - Home Header
+                            HeaderView(user: self.$user, state: self.$state)
+                            
+                            Spacer()
+                            
+                            /// - Home Bottom
+                            HomeBottomView(user: self.$user, country: self.$country, isLogin: self.$isLogin, isSelectCountry: self.$isSelectCountry, geometry: geometry)
+                            
+                        }
+                    }
+                    .frame(width: sizes.size.width, height: sizes.size.height)
+                    .onAppear(perform: self.onInit)
                 }
-                .onAppear(perform: onInit)
+                
             }
             
             

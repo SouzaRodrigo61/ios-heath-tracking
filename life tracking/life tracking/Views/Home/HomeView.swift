@@ -21,6 +21,7 @@ struct HomeView: View {
     /// States - Objectos compostos
     @State var user: Person = Person(city: "", countryCode: "", district: "", districtCode: "", gender: "", id: ID(birthday: "", email: ""), name: "", phone: "")
     
+    @State var country: Region?
     
     /// States - Map Pin
     @State var pins: [MapPin] = []
@@ -29,7 +30,7 @@ struct HomeView: View {
     /// States - Boolean
     @State private var bottomSheetShown = false
     @State private var isLogin: Bool = false
-    @State var showingAlert: Bool = false
+    @State var isSelectCountry: Bool = false
     
     
     /// States - String
@@ -46,14 +47,13 @@ struct HomeView: View {
     // MARK: - Body
     var body: some View {
         ZStack(alignment: .center) {
-            MapRepresentable(pins: self.$pins, selectedPin: self.$selectedPin, showingAlert: self.$showingAlert)
-                .alert(isPresented: $showingAlert) { () -> Alert in
-                    print("SHOWING ALERT BODY: --> \($showingAlert.wrappedValue)")
-                    return Alert(title: Text("Important message"), message: Text("Go out and have a girlfriend!"), dismissButton: .default(Text("Got it!")))
-            }
-            .edgesIgnoringSafeArea(.all)
+            MapRepresentable(pins: self.$pins, selectedPin: self.$selectedPin, showingAlert: self.$isSelectCountry, country: self.$country)
+                .edgesIgnoringSafeArea(.all)
             
             
+            ///
+            /// Change layout
+            ///  - Show Login Page
             if self.isLogin {
                 
                 GeometryReader { bounds in
@@ -70,6 +70,11 @@ struct HomeView: View {
                     
                 }
             } else {
+                
+
+                ///
+                /// Change layout
+                ///  - Show Default Layout
                 VStack(alignment: .center) {
                     GeometryReader { geometry in
                         
@@ -79,7 +84,7 @@ struct HomeView: View {
                         Spacer()
                         
                         /// - Home Bottom
-                        HomeBottomView(user: self.$user, isLogin: self.$isLogin, geometry: geometry)
+                        HomeBottomView(user: self.$user, country: self.$country, isLogin: self.$isLogin, isSelectCountry: self.$isSelectCountry, geometry: geometry)
                         
                     }
                 }

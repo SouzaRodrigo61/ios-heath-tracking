@@ -14,10 +14,13 @@ struct MapRepresentable: UIViewRepresentable {
         
         @Binding var selectedPin: MapPin?
         @Binding var showingAlert: Bool
+        @Binding var country: Region?
         
-        init(selectedPin: Binding<MapPin?>, showingAlert: Binding<Bool>) {
+        init(selectedPin: Binding<MapPin?>, showingAlert: Binding<Bool>, country: Binding<Region?>) {
             _selectedPin = selectedPin
             _showingAlert = showingAlert
+            
+            _country = country
         }
         
         
@@ -62,17 +65,24 @@ struct MapRepresentable: UIViewRepresentable {
         }
         
         func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-            print("calloutAccessoryControlTapped")
             self.showingAlert = true
+            
+            guard let countryInfo = view.annotation as? MapPin else {
+                return
+            }
+            self.country = countryInfo.country!
+            
+            print(self.country!.description )
         }
     }
     
     @Binding var pins: [MapPin]
     @Binding var selectedPin: MapPin?
     @Binding var showingAlert: Bool
+    @Binding var country: Region?
     
     func makeCoordinator() -> Coordinator {
-        return Coordinator(selectedPin: $selectedPin, showingAlert: $showingAlert)
+        return Coordinator(selectedPin: $selectedPin, showingAlert: $showingAlert, country: $country)
     }
     
     func makeUIView(context: Context) -> MKMapView {
@@ -102,18 +112,21 @@ class MapPin: NSObject, MKAnnotation {
     let subtitle: String?
     let action: (() -> Void)?
     let color: UIColor?
+    let country: Region?
     
     init(coordinate: CLLocationCoordinate2D,
          title: String? = nil,
          subtitle: String? = nil,
          action: (() -> Void)? = nil,
-         color: UIColor? = nil
+         color: UIColor? = nil,
+         country: Region? = nil
     ) {
         self.coordinate = coordinate
         self.title = title
         self.subtitle = subtitle
         self.action = action
         self.color = color
+        self.country = country
     }
     
 }

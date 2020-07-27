@@ -65,6 +65,8 @@ struct MapRepresentable: UIViewRepresentable {
         }
         
         func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+            
+            self.showingAlert = false
             self.showingAlert = true
             
             guard let countryInfo = view.annotation as? MapPin else {

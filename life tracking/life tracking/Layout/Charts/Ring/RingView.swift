@@ -20,8 +20,8 @@ struct RingView: View {
     
     
     var body: some View {
-        let multiplier = width / 44
-        let progress = (100 - percent) / 100
+        let multiplier = width / 58
+        let progress: CGFloat = (100 - percent) / 100
 
         return ZStack {
             Circle()
@@ -37,13 +37,15 @@ struct RingView: View {
                 .shadow(color: Color(color1).opacity(0.3), radius: 3 * multiplier, x: 0, y: 3 * multiplier)
                 .animation(Animation.easeInOut.delay(0.3))
             
-            Text("\(Int(percent))%")
+            Text("\(String(format: "%.1f", percent))%")
                 .font(.system(size: 14 * multiplier))
                 .fontWeight(.bold)
                 .onTapGesture {
                     self.show.toggle()
                 }
-        }
+        }.onAppear(perform: {
+            print(self.percent)
+        })
     }
 }
 

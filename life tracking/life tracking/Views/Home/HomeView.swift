@@ -55,7 +55,6 @@ struct HomeView: View {
                 /// Change layout
                 ///  - Show Login Page
                 if self.isLogin {
-                    
                     GeometryReader { bounds in
                         VStack {
                             
@@ -67,11 +66,8 @@ struct HomeView: View {
                             BlurRepresentable(style: .dark)
                                 .edgesIgnoringSafeArea(.all)
                         )
-                        
                     }
                 } else {
-                    
-
                     ///
                     /// Change layout
                     ///  - Show Default Layout
@@ -91,10 +87,7 @@ struct HomeView: View {
                     .frame(width: sizes.size.width, height: sizes.size.height)
                     .onAppear(perform: self.onInit)
                 }
-                
             }
-            
-            
         }
     }
 }

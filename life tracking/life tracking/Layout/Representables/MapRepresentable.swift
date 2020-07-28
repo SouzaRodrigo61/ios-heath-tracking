@@ -73,8 +73,6 @@ struct MapRepresentable: UIViewRepresentable {
                 return
             }
             self.country = countryInfo.country!
-            
-            print(self.country!.description )
         }
     }
     

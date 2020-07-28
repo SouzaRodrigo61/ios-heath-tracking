@@ -30,9 +30,7 @@ extension HomeView {
             coordinate: coordinate,
             title: title,
             subtitle: subTitle,
-            action: {
-                print("Casos: \(title) - \(subTitle)")
-            },
+            action: {},
             color: color,
             country: country
         )

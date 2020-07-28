@@ -43,9 +43,7 @@ struct RingView: View {
                 .onTapGesture {
                     self.show.toggle()
                 }
-        }.onAppear(perform: {
-            print(self.percent)
-        })
+        }
     }
 }
 

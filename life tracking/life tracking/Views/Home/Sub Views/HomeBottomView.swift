@@ -31,7 +31,7 @@ struct HomeBottomView: View {
         VStack {
             if isSelectCountry {
                 
-                BottomSheetView(isOpen: self.$isSelectCountry, maxHeight: self.country!.subRegions.count > 0 ? 450: 250) {
+                BottomSheetView(isOpen: self.$isSelectCountry, maxHeight: self.country!.subRegions.count > 0 ? 500: 280) {
                     
                     VStack(alignment: .leading) {
                         
@@ -95,6 +95,10 @@ struct HomeBottomView: View {
                             }
                             .frame(width: UIScreen.main.bounds.size.width)
                         }
+                        
+                        Text("Creditos: Bing")
+                            .font(.footnote)
+                        .padding(.horizontal, 20)
                     }
                     .padding(.bottom, 20)
                 }
@@ -102,6 +106,7 @@ struct HomeBottomView: View {
                 .edgesIgnoringSafeArea(.bottom)
                 
             } else {
+                
                 VStack {
                     Spacer()
                     if (self.user.name != "") {

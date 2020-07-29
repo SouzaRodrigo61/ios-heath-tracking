@@ -1,7 +1,6 @@
 <h1 align="center">Welcome to iOS Health Tracking 👋</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0 -- Work Progress-blue.svg?cacheSeconds=2592000" />
-</p>
+
+![iOS - Health Tracking](https://github.com/pos-graduacao-ucb/ios-heath-tracking/workflows/iOS%20-%20Health%20Tracking/badge.svg)
 
 > This application aims to help people find cases of diseases close by for example COVID.
 

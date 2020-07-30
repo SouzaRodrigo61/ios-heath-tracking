@@ -98,7 +98,7 @@ struct HomeBottomView: View {
                         
                         Text("Creditos: Bing")
                             .font(.footnote)
-                        .padding(.horizontal, 20)
+                            .padding(.horizontal, 20)
                     }
                     .padding(.bottom, 20)
                 }

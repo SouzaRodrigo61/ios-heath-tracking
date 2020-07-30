@@ -72,9 +72,7 @@ struct HeaderComponent: View {
                     }
                     .padding()
                     .sheet(isPresented: self.$showHealth) {
-                        VStack {
-                            Text("🚧 Working in progress 🚧")
-                        }
+                        HealthView()
                     }
                 }
                 

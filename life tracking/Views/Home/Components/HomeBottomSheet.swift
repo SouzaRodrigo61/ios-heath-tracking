@@ -29,7 +29,7 @@ struct HomeBottomSheet: View {
                         HStack(spacing: 10) {
                             HStack {
                                 Image(systemName: "person.fill")
-                                Text("5 pessoas perto de mim")
+                                Text("0 pessoas perto de mim")
                             }
 
                             HStack {
@@ -43,6 +43,11 @@ struct HomeBottomSheet: View {
                 .padding(.horizontal, 20)
                 
                 if self.bottomSheetShown {
+                    
+
+                    Spacer()
+
+                    Text("🚧 Working in progress 🚧")
                     
                     VStack(alignment: .leading) {
                         

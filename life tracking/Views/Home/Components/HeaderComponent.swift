@@ -15,6 +15,7 @@ struct HeaderComponent: View {
     @State var currentDate = Date()
     @State var value = 1
     @State var showProfile: Bool = false
+    @State var showHealth: Bool = false
     
     func format(date: Date) -> String {
         let dateFormatter = DateFormatter()
@@ -65,12 +66,16 @@ struct HeaderComponent: View {
                         
                     }
                 } else {
-                    Button(action: {}) {
+                    Button(action: {self.showHealth.toggle()}) {
                         Image(systemName: "person.crop.circle.badge.checkmark")
                             .font(.largeTitle)
                     }
                     .padding()
-                    
+                    .sheet(isPresented: self.$showHealth) {
+                        VStack {
+                            Text("🚧 Working in progress 🚧")
+                        }
+                    }
                 }
                 
                 

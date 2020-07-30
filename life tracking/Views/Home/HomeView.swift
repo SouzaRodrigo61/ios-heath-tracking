@@ -101,9 +101,6 @@ struct HomeView: View {
                             .padding(.horizontal, 20)
                             .padding(.top, 20)
                             
-                            Spacer()
-
-                            Text("🚧 iOS Health Tracking is under development 🚧")
                             
                             Spacer()
                             

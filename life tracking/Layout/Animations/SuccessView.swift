@@ -11,7 +11,7 @@ import SwiftUI
 struct SuccessView: View {
     @State var show = false
     
-    var name: String = "Rodrigo"
+    var name: String = ""
     
     var body: some View {
         VStack {

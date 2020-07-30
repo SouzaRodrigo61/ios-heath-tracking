@@ -38,7 +38,9 @@ extension HomeView {
     }
     
     func getUser() {
+        self.isLoading = true
         store.getPersonById() { (person) in
+            self.isLoading = false
             self.user = person
         }
     }

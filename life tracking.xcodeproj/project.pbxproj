@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B06D18024D3392200132EEF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06D17F24D3392200132EEF /* LoginView.swift */; };
+		5B06D18324D339EE00132EEF /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06D18224D339EE00132EEF /* HealthView.swift */; };
+		5B06D18624D33E3900132EEF /* loading-cloud.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B06D18424D33E3900132EEF /* loading-cloud.json */; };
+		5B06D18724D33E3900132EEF /* loading-awesome.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B06D18524D33E3900132EEF /* loading-awesome.json */; };
+		5B06D18924D33E9A00132EEF /* LoadingHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06D18824D33E9A00132EEF /* LoadingHomeView.swift */; };
 		5B36726024B25F0800FD3FCA /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B36725F24B25F0800FD3FCA /* RingView.swift */; };
 		5B36726324B26A4E00FD3FCA /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B36726224B26A4E00FD3FCA /* BottomSheetView.swift */; };
 		5B36726524B39DAC00FD3FCA /* HomeBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B36726424B39DAC00FD3FCA /* HomeBottomSheet.swift */; };
@@ -36,6 +41,9 @@
 		5B6AAAC224C1E2730044739D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5B6AAAC124C1E2730044739D /* Lottie */; };
 		5B710BBA24B795DE001BDA8B /* PersonStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B710BB924B795DE001BDA8B /* PersonStore.swift */; };
 		5B710BBC24B822D1001BDA8B /* CreateUser+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B710BBB24B822D1001BDA8B /* CreateUser+Extension.swift */; };
+		5B727BB324D3442C008A2518 /* group-working.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B727BB124D3442C008A2518 /* group-working.json */; };
+		5B727BB424D3442C008A2518 /* working-room.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B727BB224D3442C008A2518 /* working-room.json */; };
+		5B727BB624D34444008A2518 /* WorkingInProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B727BB524D34444008A2518 /* WorkingInProgressView.swift */; };
 		5B77BA9824CBCDE700CD9C85 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B77BA9624CBCDE700CD9C85 /* loading.json */; };
 		5B77BA9924CBCDE700CD9C85 /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B77BA9724CBCDE700CD9C85 /* success.json */; };
 		5B77BA9C24CBE47700CD9C85 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B77BA9B24CBE47700CD9C85 /* Health.swift */; };
@@ -66,6 +74,7 @@
 		5BA8609E24CCFBFF0072334F /* CitiesNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8609D24CCFBFF0072334F /* CitiesNetworking.swift */; };
 		5BA860A024CCFD090072334F /* CityStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8609F24CCFD090072334F /* CityStore.swift */; };
 		5BB6D95924A826E0009F2744 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB6D95824A826E0009F2744 /* CardComponent.swift */; };
+		5BB7115124D3465400594D42 /* developer.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BB7115024D3465400594D42 /* developer.json */; };
 		5BE16C6A24B0135400E7CEB7 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE16C6924B0135400E7CEB7 /* ViewRouter.swift */; };
 		5BE4FE0A24A0F89B001EB4D3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4FE0924A0F89B001EB4D3 /* HomeView.swift */; };
 		5BE4FE0C24A14DAB001EB4D3 /* SearchComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4FE0B24A14DAB001EB4D3 /* SearchComponent.swift */; };
@@ -102,6 +111,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B06D17F24D3392200132EEF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		5B06D18224D339EE00132EEF /* HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
+		5B06D18424D33E3900132EEF /* loading-cloud.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "loading-cloud.json"; sourceTree = "<group>"; };
+		5B06D18524D33E3900132EEF /* loading-awesome.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "loading-awesome.json"; sourceTree = "<group>"; };
+		5B06D18824D33E9A00132EEF /* LoadingHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingHomeView.swift; sourceTree = "<group>"; };
 		5B36725F24B25F0800FD3FCA /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		5B36726224B26A4E00FD3FCA /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		5B36726424B39DAC00FD3FCA /* HomeBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomSheet.swift; sourceTree = "<group>"; };
@@ -130,6 +144,9 @@
 		5B6AAABE24C1E1F50044739D /* LottieRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieRepresentable.swift; sourceTree = "<group>"; };
 		5B710BB924B795DE001BDA8B /* PersonStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonStore.swift; sourceTree = "<group>"; };
 		5B710BBB24B822D1001BDA8B /* CreateUser+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateUser+Extension.swift"; sourceTree = "<group>"; };
+		5B727BB124D3442C008A2518 /* group-working.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "group-working.json"; sourceTree = "<group>"; };
+		5B727BB224D3442C008A2518 /* working-room.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "working-room.json"; sourceTree = "<group>"; };
+		5B727BB524D34444008A2518 /* WorkingInProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingInProgressView.swift; sourceTree = "<group>"; };
 		5B77BA9624CBCDE700CD9C85 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		5B77BA9724CBCDE700CD9C85 /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		5B77BA9B24CBE47700CD9C85 /* Health.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
@@ -166,6 +183,7 @@
 		5BA8609D24CCFBFF0072334F /* CitiesNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesNetworking.swift; sourceTree = "<group>"; };
 		5BA8609F24CCFD090072334F /* CityStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityStore.swift; sourceTree = "<group>"; };
 		5BB6D95824A826E0009F2744 /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
+		5BB7115024D3465400594D42 /* developer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = developer.json; sourceTree = "<group>"; };
 		5BE16C6924B0135400E7CEB7 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		5BE4FE0924A0F89B001EB4D3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5BE4FE0B24A14DAB001EB4D3 /* SearchComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchComponent.swift; sourceTree = "<group>"; };
@@ -234,6 +252,22 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		5B06D17E24D3391000132EEF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5B06D17F24D3392200132EEF /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		5B06D18124D339DD00132EEF /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				5B06D18224D339EE00132EEF /* HealthView.swift */,
+			);
+			path = Health;
+			sourceTree = "<group>";
+		};
 		5B36726124B25F1E00FD3FCA /* Ring */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,17 +305,9 @@
 			path = Create;
 			sourceTree = "<group>";
 		};
-		5B62BE6824C4BBCA00A7B416 /* Show */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Show;
-			sourceTree = "<group>";
-		};
 		5B63EACE24B3E8EF00EB421A /* User */ = {
 			isa = PBXGroup;
 			children = (
-				5B62BE6824C4BBCA00A7B416 /* Show */,
 				5B62BE6724C4BBB800A7B416 /* Create */,
 			);
 			path = User;
@@ -307,6 +333,8 @@
 			children = (
 				5B6AAABA24C1E1A70044739D /* LoadingView.swift */,
 				5B6AAABB24C1E1A70044739D /* SuccessView.swift */,
+				5B06D18824D33E9A00132EEF /* LoadingHomeView.swift */,
+				5B727BB524D34444008A2518 /* WorkingInProgressView.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -314,6 +342,11 @@
 		5B77BA9524CBCDBE00CD9C85 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				5BB7115024D3465400594D42 /* developer.json */,
+				5B727BB124D3442C008A2518 /* group-working.json */,
+				5B727BB224D3442C008A2518 /* working-room.json */,
+				5B06D18524D33E3900132EEF /* loading-awesome.json */,
+				5B06D18424D33E3900132EEF /* loading-cloud.json */,
 				5B77BA9624CBCDE700CD9C85 /* loading.json */,
 				5B77BA9724CBCDE700CD9C85 /* success.json */,
 			);
@@ -453,6 +486,8 @@
 		5B968F8E24A0E0900020AB5D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5B06D18124D339DD00132EEF /* Health */,
+				5B06D17E24D3391000132EEF /* Login */,
 				5B63EACE24B3E8EF00EB421A /* User */,
 				5BE4FE0824A0F884001EB4D3 /* Home */,
 				5B968F9A24A0E8BA0020AB5D /* Onboarding */,
@@ -782,12 +817,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B727BB424D3442C008A2518 /* working-room.json in Resources */,
+				5B06D18724D33E3900132EEF /* loading-awesome.json in Resources */,
 				5B645FFD24C5F68300D40576 /* brazilHigh.svg in Resources */,
 				5B968F6A24A053680020AB5D /* LaunchScreen.storyboard in Resources */,
 				5B968F6724A053680020AB5D /* Preview Assets.xcassets in Resources */,
+				5B06D18624D33E3900132EEF /* loading-cloud.json in Resources */,
+				5B727BB324D3442C008A2518 /* group-working.json in Resources */,
 				5B968F6424A053680020AB5D /* Assets.xcassets in Resources */,
 				5B77BA9824CBCDE700CD9C85 /* loading.json in Resources */,
 				5B77BA9924CBCDE700CD9C85 /* success.json in Resources */,
+				5BB7115124D3465400594D42 /* developer.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -842,9 +882,11 @@
 				5B3DA15424A829590010A54D /* BlurRepresentable.swift in Sources */,
 				5B36726524B39DAC00FD3FCA /* HomeBottomSheet.swift in Sources */,
 				5BF8223B24C934E6005E6EF1 /* TimeSeries.swift in Sources */,
+				5B727BB624D34444008A2518 /* WorkingInProgressView.swift in Sources */,
 				5B37B8C324B6534800E3E619 /* HeaderComponent.swift in Sources */,
 				5B710BBA24B795DE001BDA8B /* PersonStore.swift in Sources */,
 				5BF8223F24C93539005E6EF1 /* Change.swift in Sources */,
+				5B06D18924D33E9A00132EEF /* LoadingHomeView.swift in Sources */,
 				5B6AAABC24C1E1A70044739D /* LoadingView.swift in Sources */,
 				5B99106F24C13EAB00302834 /* LocationManager.swift in Sources */,
 				5B37B8C624B69ACC00E3E619 /* AdaptsToSoftwareKeyboard.swift in Sources */,
@@ -860,9 +902,11 @@
 				5BF8223924C934BE005E6EF1 /* Coordinate.swift in Sources */,
 				5B65F69224AEC4040049BA64 /* RoundedCorners.swift in Sources */,
 				5BF8223D24C93506005E6EF1 /* Statistic.swift in Sources */,
+				5B06D18024D3392200132EEF /* LoginView.swift in Sources */,
 				5BF8224C24C936F6005E6EF1 /* BaseDataService.swift in Sources */,
 				5B77BA9C24CBE47700CD9C85 /* Health.swift in Sources */,
 				5B8AAC7024CB522E00AACC32 /* HomeView+Extension.swift in Sources */,
+				5B06D18324D339EE00132EEF /* HealthView.swift in Sources */,
 				5B8182FF24C1159D00E0CE4C /* ImageHeaderView.swift in Sources */,
 				5B81830124C115CC00E0CE4C /* AdaptativeTextField.swift in Sources */,
 				5BB6D95924A826E0009F2744 /* CardComponent.swift in Sources */,

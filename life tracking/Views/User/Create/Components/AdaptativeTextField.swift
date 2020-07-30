@@ -14,12 +14,13 @@ struct AdaptativeTextField: View {
     var bounds: GeometryProxy
     var keyboardType: UIKeyboardType = .default
     var icon: Image = Image(systemName: "person.fill")
+    var placeholder: String = ""
     
     var body: some View {
         VStack {
             HStack {
                 icon
-                TextField("", text: $text) {
+                TextField(placeholder, text: $text) {
                     UIApplication.shared.endEditing()
                 }
                 .keyboardType(keyboardType)
